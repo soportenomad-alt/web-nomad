@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#0B1220" name="theme-color"/>
+<title>Nomad Genetics | Oncología de precisión</title>
+<meta content="Nomad Genetics: pruebas genómicas y asesoría para oncología de precisión. Resultados claros, acompañamiento humano y coordinación clínica." name="description"/>
+<link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link rel="preload" href="assets/hero.mp4" as="video" type="video/mp4"/>
+<!-- Coloca tu video en assets/hero.mp4 (recomendado). También funciona si lo dejas con el nombre original en assets/10661569-uhd_3840_2160_30fps.mp4 -->
+<link href="styles.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
+
+<!-- Ajuste solicitado: Florence debe abrirse desde el botón flotante inferior derecho (antes WhatsApp) -->
+<style>
+  /* Asegura que el panel del chat esté anclado abajo a la derecha (misma zona del botón flotante) */
+  .nomad-chat{ position: fixed !important; right: 16px !important; bottom: 12px !important; top: auto !important; left: auto !important; }
+  @media (max-width: 520px){
+    .nomad-chat{ right: 16px !important; bottom: 12px !important; }
+  }
+
+  /* Ocultamos la píldora grande (Florence) para que SOLO quede el ícono inferior derecho */
+  .nomad-chat__btn{ display:none !important; }
+
+  /* Oculta el toggle/botón flotante default del widget n8n (por si aparece) */
+  .n8n-chat-widget-toggle,
+  .n8n-chat-widget-button,
+  .n8n-chat-widget__toggle,
+  [class*="n8n-chat-widget-toggle"],
+  [class*="n8n-chat-widget__toggle"]{ display: none !important; }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="topbar" role="banner">
+<div class="container topbar__inner">
+<a aria-label="Ir al inicio" class="brand" href="#inicio">
+<img alt="Nomad Genetics" class="brand__logo brand__logo--full" src="assets/logo.png"/>
+</a>
+<nav aria-label="Navegación principal" class="nav">
+<button aria-controls="navMenu" aria-expanded="false" class="nav__toggle" type="button">
+<span class="sr-only">Abrir menú</span>
+<span aria-hidden="true" class="hamburger"></span>
+</button>
+<div class="nav__menu" id="navMenu">
+<a href="#diferencial">Qué nos distingue</a>
+<a href="#servicios">Pruebas y servicios</a>
+<a href="#flujo">Cómo funciona</a>
+<a href="#equipo">Equipo</a>
+<a href="https://soporteti-desing.github.io/KAMS-NOMAD/" data-modal-url="https://soporteti-desing.github.io/KAMS-NOMAD/" data-modal-title="Representantes">Representantes</a>
+
+<div class="nav__social" aria-label="Redes sociales">
+  <a class="social" href="https://mx.linkedin.com/company/nomadgenetics" target="_blank" rel="noopener" aria-label="LinkedIn (abre en nueva pestaña)">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0.5 23.5h4V7.98h-4V23.5ZM8.5 7.98h3.83v2.12h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.66 4.8 6.12v9.34h-4v-8.28c0-1.97-.04-4.5-2.74-4.5-2.74 0-3.16 2.14-3.16 4.36v8.42h-4V7.98Z"/>
+    </svg>
+  </a>
+  <a class="social" href="https://www.instagram.com/nomad_genetics/" target="_blank" rel="noopener" aria-label="Instagram (abre en nueva pestaña)">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm-4.5 4A6 6 0 1 1 6 14a6 6 0 0 1 6-6Zm0 2a4 4 0 1 0 4 4a4 4 0 0 0-4-4Zm6.2-2.8a1.2 1.2 0 1 1-1.2-1.2a1.2 1.2 0 0 1 1.2 1.2Z"/>
+    </svg>
+  </a>
+</div>
+<a class="btn btn--sm" href="#contacto">Agendar asesoría</a>
+</div>
+</nav>
+</div>
+</header>
+<main id="contenido">
+<!-- HERO -->
+<section aria-label="Encabezado principal" class="hero" id="inicio">
+  <video class="hero__video" autoplay muted playsinline loop preload="metadata" poster="assets/poster.svg">
+    <source src="assets/hero.mp4" type="video/mp4"/>
+    <source src="assets/10661569-uhd_3840_2160_30fps.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos HTML5.
+  </video>
+
+  <!-- Logo encima del video -->
+  <div class="hero__logoOverlay" aria-hidden="true">
+    <img src="assets/logo.png" alt=""/>
+  </div>
+</section>
+<section aria-label="Propuesta de valor" class="intro">
+<div class="container">
+<div class="intro__panel">
+<p class="pill">Oncología de precisión · Genómica clínica</p>
+<h1>Decisiones clínicas más claras con <span class="accent">genética</span> y <span class="accent">acompañamiento</span>.</h1>
+<p class="lead">
+        En Nomad Genetics integramos pruebas genómicas, interpretación clínica y asesoría para apoyar a médicos y pacientes en cada paso.
+      </p>
+<div class="hero__cta">
+<a class="btn" href="#contacto">Agendar asesoría</a>
+<a class="btn btn--ghost" href="https://soporteti-desing.github.io/catalogo-Nomad/" data-modal-url="https://soporteti-desing.github.io/catalogo-Nomad/" data-modal-title="Catálogo de pruebas">Conoce nuestro catálogo de pruebas</a>
+</div>
+<div class="kpis">
+<div class="kpi">
+<p class="kpi__label">TIEMPO TÍPICO</p>
+<p class="kpi__value">10–21 días</p>
+</div>
+<div class="kpi">
+<p class="kpi__label">INFORMES</p>
+<p class="kpi__value">Claros y accionables</p>
+</div>
+<div class="kpi">
+<p class="kpi__label">SOPORTE</p>
+<p class="kpi__value">Navegación clínica</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DIFERENCIAL -->
+<section class="section" id="diferencial">
+<div class="container">
+<div class="section__head">
+<h2>Qué nos distingue</h2>
+<p>Un modelo integral diseñado para que la genómica se convierta en decisiones prácticas, sin fricción.</p>
+</div>
+<div class="zigzag">
+<div class="zigzag__content">
+<div class="grid grid--3">
+<article class="card">
+<h3>Interpretación clínica</h3>
+<p>Curación de variantes, relevancia terapéutica y recomendaciones basadas en evidencia.</p>
+</article>
+<article class="card">
+<h3>Coordinación end‑to‑end</h3>
+<p>Logística de muestra, seguimiento y comunicación con tu equipo clínico.</p>
+</article>
+<article class="card">
+<h3>Acompañamiento humano</h3>
+<p>Asesoría genética y apoyo para pacientes y familiares con lenguaje accesible.</p>
+</article>
+<article class="card">
+<h3>Paneles oncológicos</h3>
+<p>Somático, germinal y perfiles ampliados según indicación clínica.</p>
+</article>
+<article class="card">
+<h3>Reportes listos para decisión</h3>
+<p>Resultados sintetizados para comité oncológico, con anexos técnicos cuando se requiere.</p>
+</article>
+<article class="card">
+<h3>Integración</h3>
+<p>Formatos compatibles para expediente y comunicación con KAM / coordinación médica.</p>
+</article>
+</div>
+</div>
+<div class="zigzag__media">
+  <video class="sectionVideo" autoplay muted playsinline loop preload="metadata">
+    <source src="assets/nomad_videos/video1.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos
+  </video>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICIOS -->
+<section class="section section--alt" id="servicios">
+<div class="container">
+<div class="section__head">
+<h2>Pruebas y servicios</h2>
+<p>Selecciona el estudio adecuado según el caso.</p>
+</div>
+<div class="zigzag zigzag--reverse zigzag--stack">
+<div class="zigzag__media">
+  <video class="sectionVideo" autoplay muted playsinline loop preload="metadata">
+    <source src="assets/nomad_videos/video2.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos
+  </video>
+</div>
+<div class="zigzag__content">
+<div class="grid grid--2">
+<article class="card card--feature">
+<h3>Panel somático (tumor)</h3>
+<p>Perfilación de alteraciones accionables para guiar tratamiento en tumores sólidos.</p>
+<ul class="list">
+<li>Genes accionables y resistencias</li>
+<li>Biomarcadores como MSI/TMB (según panel)</li>
+<li>Recomendaciones terapéuticas</li>
+</ul>
+</article>
+<article class="card card--feature">
+<h3>Panel germinal (hereditario)</h3>
+<p>Evaluación de predisposición hereditaria y riesgo familiar.</p>
+<ul class="list">
+<li>Asesoría pre y post prueba</li>
+<li>Implicaciones para familiares</li>
+<li>Recomendaciones de vigilancia</li>
+</ul>
+</article>
+<article class="card card--feature">
+<h3>Farmacogenómica</h3>
+<p>Apoyo para ajuste de dosis / elección de fármacos con base genética (según indicación).</p>
+<ul class="list">
+<li>Variantes relevantes</li>
+<li>Interacciones y precauciones</li>
+<li>Resumen para expediente</li>
+</ul>
+</article>
+<article class="card card--feature">
+<h3>Consejo genético</h3>
+<p>Sesión clínica para explicar alcances, riesgos, y pasos siguientes.</p>
+<ul class="list">
+<li>Lenguaje claro</li>
+<li>Plan de acción</li>
+<li>Seguimiento</li>
+</ul>
+</article>
+</div>
+<div class="subsection" id="domicilio">
+<div class="subhead">
+<h3>Prueba a domicilio</h3>
+<p>Coordinamos logística y toma de muestra (según prueba y ciudad), con cadena de custodia y comunicación clínica.</p>
+</div>
+<div class="domicilio">
+<div class="card domicilio__info">
+<ul class="list">
+<li>Agendamiento y confirmación por WhatsApp / teléfono</li>
+<li>Kit y toma de muestra con protocolo</li>
+<li>Recolección y envío al laboratorio</li>
+<li>Seguimiento de estatus e informe</li>
+</ul>
+<div class="domicilio__cta">
+<a class="btn btn--sm" href="#contacto">Solicitar domicilio</a>
+<a class="btn btn--sm btn--ghost" href="#flujo">Ver cómo funciona</a>
+</div>
+</div>
+<div class="card domicilio__partners">
+<p class="muted">Aliados para prueba a domicilio:</p>
+<div class="helix" data-helix aria-label="Aliados y plataformas">
+  <div class="helix__viewport">
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_1.png" alt="Aliado 1"></div>
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_2.jpg" alt="Aliado 2"></div>
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_3.png" alt="Aliado 3"></div>
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_4.jpg" alt="Aliado 4"></div>
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_5.jpg" alt="Aliado 5"></div>
+    <div class="helix__item"><img loading="lazy" src="assets/partners_word/partner_6.png" alt="Aliado 6"></div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="ctaBand">
+<div>
+<h3>¿No sabes qué prueba corresponde?</h3>
+<p>Te ayudamos a elegir el panel correcto según diagnóstico, muestra disponible y objetivo clínico.</p>
+</div>
+<a class="btn" href="https://soporteti-desing.github.io/modulo-de-atenci-n-a-pacientes/" data-modal-url="https://soporteti-desing.github.io/modulo-de-atenci-n-a-pacientes/" data-modal-title="Atención a pacientes">Hablar con un asesor</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CÓMO FUNCIONA -->
+<section class="section" id="flujo">
+<div class="container">
+<div class="section__head">
+<h2>Cómo funciona</h2>
+<p>Un flujo simple, diseñado para tu práctica clínica.</p>
+</div>
+<div class="zigzag">
+<div class="zigzag__content">
+<ol class="steps">
+<li class="step">
+<span class="step__num">1</span>
+<div class="step__body">
+<h3>Solicitud</h3>
+<p>Recibimos el caso (diagnóstico, objetivo, tipo de muestra) y confirmamos el estudio indicado.</p>
+</div>
+</li>
+<li class="step">
+<span class="step__num">2</span>
+<div class="step__body">
+<h3>Logística</h3>
+<p>Coordinamos recolección/entrega y control de calidad de la muestra.</p>
+</div>
+</li>
+<li class="step">
+<span class="step__num">3</span>
+<div class="step__body">
+<h3>Secuenciación e interpretación</h3>
+<p>Analizamos datos con pipelines validados y curación clínica.</p>
+</div>
+</li>
+<li class="step">
+<span class="step__num">4</span>
+<div class="step__body">
+<h3>Reporte + acompañamiento</h3>
+<p>Entregamos resultados con sesión de explicación y recomendaciones de seguimiento.</p>
+</div>
+</li>
+</ol>
+<div class="note">
+<strong>Aviso:</strong> La información de esta página es informativa y no sustituye la evaluación médica.
+        </div>
+</div>
+<div class="zigzag__media">
+  <video class="sectionVideo" autoplay muted playsinline loop preload="metadata">
+    <source src="assets/nomad_videos/video3.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos
+  </video>
+</div>
+</div>
+</div>
+</section>
+<!-- EQUIPO -->
+<section class="section section--alt" id="equipo">
+<div class="container">
+<div class="section__head">
+<h2>Equipo multidisciplinario</h2>
+<p>Genetistas, oncología, bioinformática y navegación clínica, trabajando en conjunto.</p>
+</div>
+<div class="zigzag zigzag--reverse">
+<div class="zigzag__media">
+  <video class="sectionVideo" autoplay muted playsinline loop preload="metadata">
+    <source src="assets/nomad_videos/video4.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos
+  </video>
+</div>
+<div class="zigzag__content">
+<div class="grid grid--3">
+<article class="card person">
+<div aria-hidden="true" class="avatar"></div>
+<h3>Dra. / Dr. Nombre Apellido</h3>
+<p class="muted">Genética médica · Consejo genético</p>
+</article>
+<article class="card person">
+<div aria-hidden="true" class="avatar"></div>
+<h3>Dra. / Dr. Nombre Apellido</h3>
+<p class="muted">Oncología · Tumor boards</p>
+</article>
+<article class="card person">
+<div aria-hidden="true" class="avatar"></div>
+<h3>Nombre Apellido</h3>
+<p class="muted">Bioinformática · Curación de variantes</p>
+</article>
+</div>
+<div aria-label="Testimonios" class="quotes">
+<figure class="quote is-active">
+<blockquote>“El reporte es claro para comité y la asesoría ayuda mucho a explicarlo al paciente.”</blockquote>
+<figcaption>Oncóloga · CDMX</figcaption>
+</figure>
+<figure class="quote">
+<blockquote>“La coordinación logística reduce tiempos y evita retrabajo. Muy buen seguimiento.”</blockquote>
+<figcaption>Patólogo · Toluca</figcaption>
+</figure>
+<figure class="quote">
+<blockquote>“Tener soporte post‑resultado da tranquilidad a la familia. Excelente acompañamiento.”</blockquote>
+<figcaption>Paciente · Morelia</figcaption>
+</figure>
+<div class="quote__controls">
+<button aria-label="Anterior" class="iconBtn" data-quote="prev" type="button">‹</button>
+<button aria-label="Siguiente" class="iconBtn" data-quote="next" type="button">›</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+<div class="container">
+<div class="section__head">
+<h2>Agenda una asesoría</h2>
+<p>Déjanos tus datos y te contactamos.</p>
+</div>
+<div class="zigzag">
+<div class="zigzag__content">
+<div class="contact">
+<form class="form" id="contactForm">
+<label>
+              Nombre
+              <input autocomplete="name" name="nombre" required=""/>
+</label>
+<label>
+              Correo
+              <input autocomplete="email" name="correo" required="" type="email"/>
+</label>
+<label>
+              Teléfono / WhatsApp
+              <input autocomplete="tel" name="telefono"/>
+</label>
+<label>
+              Mensaje
+              <textarea name="mensaje" placeholder="Cuéntanos brevemente el caso o lo que necesitas." rows="4"></textarea>
+</label>
+<button class="btn" type="submit">Enviar</button>
+<p aria-live="polite" class="muted small" id="formStatus" role="status"></p>
+</form>
+<aside class="card contact__aside">
+<h3>Contacto directo</h3>
+<div class="kv">
+<div>
+<div class="kv__k">Email</div>
+<div class="kv__v"><a href="mailto:ger.genomica@nomadgenetics.com">ger.genomica@nomadgenetics.com</a></div>
+</div>
+<div>
+<div class="kv__k">Teléfono</div>
+<div class="kv__v"><a href="tel:+525500000000">+52 55 7994 9420</a></div>
+</div>
+<div>
+<div class="kv__k">Ubicaciones</div>
+<div class="kv__v">CDMX · CHILE</div>
+</div>
+</div>
+<a class="btn btn--ghost" href="#servicios">Ver pruebas</a>
+</aside>
+</div>
+</div>
+<div class="zigzag__media">
+  <video class="sectionVideo" autoplay muted playsinline loop preload="metadata">
+    <source src="assets/nomad_videos/video5.mp4" type="video/mp4"/>
+    Tu navegador no soporta videos
+  </video>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container footer__inner">
+<div class="footer__brandRow">
+<img alt="Nomad Genetics" class="footer__logo footer__logo--full" src="assets/logo.png"/>
+<div>
+<div class="footer__brand">Nomad Genetics</div>
+<p class="muted small">Oncología de precisión · Genómica clínica</p>
+</div>
+</div>
+<div class="footer__links">
+<a href="#diferencial">Diferencial</a>
+<a href="#servicios">Servicios</a>
+<a href="#flujo">Proceso</a>
+<a href="#contacto">Contacto</a>
+</div>
+</div>
+</footer>
+<!-- Botón flotante (abajo a la derecha): ahora abre el chat Florence -->
+<button id="florenceFab" aria-label="Abrir chat Florence" class="wa wa--florence" type="button">
+  <span class="wa__icon" aria-hidden="true">
+    <!-- Ícono estilo chatbot (sin watermark) -->
+    <svg viewBox="0 0 64 64" role="img" aria-label="Chatbot">
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="16" y="18" width="32" height="28" rx="10"/>
+        <path d="M32 10v8"/>
+        <circle cx="32" cy="10" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="26" cy="32" r="2" fill="currentColor" stroke="none"/>
+        <circle cx="38" cy="32" r="2" fill="currentColor" stroke="none"/>
+        <path d="M26 40h12"/>
+      </g>
+    </svg>
+  </span>
+</button>
+
+<!-- Modal para ver páginas (Catálogo / Asesor / Representantes) sin salir del sitio -->
+<div class="modal" id="embedModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="embedModalTitle">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel" role="document">
+    <div class="modal__header">
+      <h3 id="embedModalTitle">Vista</h3>
+      <div class="modal__actions">
+        <a class="modal__newtab" href="#" target="_blank" rel="noopener">Abrir en pestaña</a>
+        <button class="iconBtn modal__close" type="button" data-modal-close aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+    <div class="modal__body">
+      <iframe class="modal__frame" title="Vista" src="about:blank" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Chat flotante (Florence - Nomad Genetics) -->
+<div class="nomad-chat" aria-label="Chat Florence">
+  <button id="nomadChatBtn" class="nomad-chat__btn" type="button" aria-haspopup="dialog" aria-controls="nomadChatPanel" aria-expanded="false">
+    <span class="nomad-chat__btnIcon" aria-hidden="true">✦</span>
+    <span class="nomad-chat__btnText">Florence</span>
+    <span class="nomad-chat__btnHint">Asistente 24/7</span>
+  </button>
+
+  <section id="nomadChatPanel" class="nomad-chat__panel" role="dialog" aria-modal="false" aria-label="Chat Florence" aria-hidden="true">
+    <header class="nomad-chat__panelHeader">
+      <div class="nomad-chat__panelTitles">
+        <div class="nomad-chat__title">Florence</div>
+        <div class="nomad-chat__subtitle">Asistente de cotizaciones</div>
+      </div>
+      <button id="nomadChatClose" class="nomad-chat__close" type="button" aria-label="Cerrar chat">✕</button>
+    </header>
+    <div id="nomadChatMount" class="nomad-chat__mount"></div>
+  </section>
+</div>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  // 1) Monta el chat dentro de nuestro panel (sin burbuja default)
+  createChat({
+    target: '#nomadChatMount',
+    mode: 'fullscreen',
+    showWelcomeScreen: false,
+    webhookUrl: 'https://winnieadame.app.n8n.cloud/webhook/ebae5491-46bc-4a85-bf7a-da0e99a28f07/chat',
+    initialMessages: [
+      'Hola cómo estas 👋',
+      'Mi nombre es Florence. ¿En qué puedo ayudarte el día de hoy?'
+    ],
+    defaultLanguage: 'es',
+    i18n: {
+      es: {
+        title: 'Florence - Nomad Genetics',
+        subtitle: 'Asistente de cotizaciones',
+        footer: '',
+        getStarted: 'Iniciar conversación',
+        inputPlaceholder: 'Escribe tu mensaje...'
+      }
+    }
+  });
+
+  // 2) Control UI (abrir/cerrar)
+  const btn = document.getElementById('nomadChatBtn'); // (oculto) se mantiene para compatibilidad
+  const fab = document.getElementById('florenceFab');
+  const panel = document.getElementById('nomadChatPanel');
+  const close = document.getElementById('nomadChatClose');
+  const mount = document.getElementById('nomadChatMount');
+
+  function getMessagesEl(){
+    return (
+      panel.querySelector('.n8n-chat-messages') ||
+      panel.querySelector('.n8n-chat__messages') ||
+      panel.querySelector('[class*="messages"]')
+    );
+  }
+
+  function compactWelcome(){
+    mount?.classList?.add('is-compact');
+  }
+
+  let _msgObserver;
+  function setupAutoScroll(){
+    const msgs = getMessagesEl();
+    if (!msgs || _msgObserver) return;
+
+    _msgObserver = new MutationObserver(() => {
+      const distance = msgs.scrollHeight - msgs.scrollTop - msgs.clientHeight;
+      const nearBottom = distance < 120;
+      if (nearBottom) msgs.scrollTop = msgs.scrollHeight;
+    });
+
+    _msgObserver.observe(msgs, { childList: true, subtree: true });
+  }
+
+
+  function openChat() {
+    panel.classList.add('is-open');
+    panel.setAttribute('aria-hidden', 'false');
+    btn?.setAttribute('aria-expanded', 'true');
+    fab?.setAttribute('aria-expanded', 'true');
+
+    // Enfoca el campo de texto automáticamente (para escribir al instante)
+    setTimeout(() => {
+      const input =
+        panel.querySelector('.n8n-chat-widget-message-input-field') ||
+        panel.querySelector('textarea') ||
+        panel.querySelector('input[type="text"]');
+      input?.focus?.();
+      // En cuanto el usuario empiece, compacta el bloque azul y activa autoscroll
+      const onFirstType = () => { compactWelcome(); setupAutoScroll(); };
+      input?.addEventListener?.('focus', onFirstType, { once: true });
+      input?.addEventListener?.('input', onFirstType, { once: true });
+      setupAutoScroll();
+}, 50);
+  }
+  function closeChat() {
+    panel.classList.remove('is-open');
+    panel.setAttribute('aria-hidden', 'true');
+    btn?.setAttribute('aria-expanded', 'false');
+    fab?.setAttribute('aria-expanded', 'false');
+  }
+
+  btn?.addEventListener('click', () => {
+    if (panel.classList.contains('is-open')) closeChat();
+    else openChat();
+  });
+
+  // El botón inferior derecho (antes WhatsApp) ahora abre el chat
+  fab?.addEventListener('click', () => {
+    if (panel.classList.contains('is-open')) closeChat();
+    else openChat();
+  });
+  close?.addEventListener('click', closeChat);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeChat();
+  });
+</script>
+
+<script defer="" src="script.js"></script>
+</body>
+</html>

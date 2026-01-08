@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#060A12"/>
+    </linearGradient>
+    <radialGradient id="a" cx="25%" cy="10%" r="60%">
+      <stop offset="0" stop-color="#BFD6FF" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#BFD6FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="b" cx="80%" cy="20%" r="55%">
+      <stop offset="0" stop-color="#9EE7D7" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#9EE7D7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="420" cy="120" r="420" fill="url(#a)"/>
+  <circle cx="1320" cy="180" r="420" fill="url(#b)"/>
+  <g opacity=".55">
+    <path d="M420 640c220 120 520 120 740 0" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M520 300c120-70 380-70 500 0" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <text x="80" y="820" fill="rgba(234,240,255,.72)" font-size="38" font-family="ui-sans-serif,system-ui" font-weight="700">Nomad Genetics</text>
+</svg>
