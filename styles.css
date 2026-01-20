@@ -69,6 +69,15 @@ a:hover{opacity:.9}
   border:1px solid rgba(255,255,255,.10);
   box-shadow: 0 12px 34px rgba(0,0,0,.25);
 }
+
+.brand__flag{
+  width: 34px;
+  height: 22px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 10px 28px rgba(0,0,0,.22);
+}
 .brand__text{display:flex; flex-direction:column; line-height:1}
 .brand__name{font-weight:800; letter-spacing:.2px}
 .brand__sub{font-size:13px; color:var(--muted); margin-top:2px}
@@ -416,33 +425,60 @@ input:focus, textarea:focus{border-color: rgba(139,182,255,.45); box-shadow: 0 0
 }
 .wa span{ font-size:24px; line-height:1; }
 
-/* Botón flotante Florence (antes WhatsApp): más grande y pulsante, sin mover su posición */
+/* Botón flotante Florence (chat): MÁS GRANDE, como tu screenshot, con contorno AZUL */
 .wa--florence{
-  width: 86px;
-  height: 86px;
-  border-radius: 28px;
+  width: 148px;
+  height: 148px;
+  border-radius: 999px;
   color: #ffffff;
+  background: rgba(156,195,255,.22);
+  border: 10px solid rgba(108,178,255,.88); /* contorno azul */
   transform-origin: 100% 100%;
   will-change: transform, box-shadow;
-  animation: florenceFabPulse 2.1s ease-out infinite;
+  animation: florenceFabPulseBlue 2.2s ease-out infinite;
 }
-.wa--florence span{ font-size: 30px; }
-.wa--florence .wa__icon{ display:flex; align-items:center; justify-content:center; }
-.wa--florence .wa__icon svg{ width: 46px; height: 46px; display:block; }
+.wa--florence .wa__icon{
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(156,195,255,.22), rgba(156,195,255,0) 58%),
+    #081733;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.14), 0 18px 48px rgba(0,0,0,.40);
+}
+.wa--florence .wa__img{
+  width: 92px;
+  height: 92px;
+  border-radius: 22px;
+  object-fit: cover;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
 
-@keyframes florenceFabPulse{
+@keyframes florenceFabPulseBlue{
   0%{
     transform: translateZ(0) scale(1);
-    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 0 rgba(77,163,255,.40);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 0 rgba(108,178,255,.42);
   }
   60%{
     transform: translateZ(0) scale(1.06);
-    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 22px rgba(77,163,255,0);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 38px rgba(108,178,255,0);
   }
   100%{
     transform: translateZ(0) scale(1);
-    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 0 rgba(77,163,255,0);
+    box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 0 0 rgba(108,178,255,0);
   }
+}
+
+@media (max-width: 520px){
+  .wa--florence{ width: 128px; height: 128px; border-width: 9px; }
+  .wa--florence .wa__icon{ width: 96px; height: 96px; }
+  .wa--florence .wa__img{ width: 78px; height: 78px; }
 }
 @media (prefers-reduced-motion: reduce){
   .wa--florence{ animation: none; }
@@ -608,7 +644,7 @@ input:focus, textarea:focus{border-color: rgba(139,182,255,.45); box-shadow: 0 0
 .helix{
   margin-top: 12px;
   position: relative;
-  height: 320px;
+  height: 460px;
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--border);
@@ -624,36 +660,56 @@ input:focus, textarea:focus{border-color: rgba(139,182,255,.45); box-shadow: 0 0
   transform: rotate(12deg);
   pointer-events:none;
 }
+
+/* Fallback (si JS no carga): muestra tarjetas en grid */
 .helix__viewport{
   position:relative;
   width:100%;
   height:100%;
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+  align-items:center;
+  justify-content:center;
+  padding: 14px;
 }
 .helix__item{
-  position:absolute;
-  left:50%;
-  top:0;
+  position:relative;
+  left:auto;
+  top:auto;
   width: 260px;
-  height: 96px;
+  height: 360px;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding: 14px 18px;
-  border-radius: 16px;
+  padding: 12px;
+  border-radius: 18px;
   background: rgba(10,14,26,.55);
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: 0 18px 50px rgba(0,0,0,.35);
   backdrop-filter: blur(8px);
-  transform: translate(-50%, -50%);
+  transform: none;
   will-change: transform, opacity, filter;
 }
 .helix__item img{
-  max-width: 200px;
-  max-height: 64px;
+  max-width: 240px;
+  max-height: 340px;
   width:auto;
   height:auto;
-  opacity:.95;
+  opacity:.98;
   filter: saturate(1.05) contrast(1.05);
+}
+
+/* Estado animado (JS agrega .is-animated) */
+.helix.is-animated .helix__viewport{
+  display:block;
+  padding: 0;
+}
+.helix.is-animated .helix__item{
+  position:absolute;
+  left:50%;
+  top:0;
+  transform: translate(-50%, -50%);
 }
 
 /* Respeta accesibilidad */
@@ -890,7 +946,7 @@ font-weight: 700;
   }
   55% {
     transform: translateZ(0) scale(1.04);
-    box-shadow: 0 12px 32px rgba(0,0,0,.35), 0 0 0 22px rgba(77,163,255,0);
+    box-shadow: 0 12px 32px rgba(0,0,0,.35), 0 0 0 34px rgba(77,163,255,0);
   }
   100% {
     transform: translateZ(0) scale(1);

@@ -77,9 +77,13 @@
   const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function initHelix() {
-    const viewport = document.querySelector('[data-helix] .helix__viewport');
+    const helix = document.querySelector('[data-helix]');
+    const viewport = helix?.querySelector('.helix__viewport');
     if (!viewport) return;
     if (prefersReducedMotion) return; // CSS muestra versión estática
+
+    // Activa estilos de animación (fallback CSS muestra grid si no se agrega esta clase)
+    helix?.classList?.add('is-animated');
 
     let items = Array.from(viewport.querySelectorAll('.helix__item'));
     const MIN_ITEMS = 14;
@@ -96,8 +100,8 @@
     }
 
     // Velocidad de la animación (ajustada a más lenta)
-    const scrollSpeed = 12; // px/s (antes 46)
-    const waveSpeed = 0.85;  // rad/s (antes 2.4)
+    const scrollSpeed = 6;   // px/s
+    const waveSpeed = 0.55;  // rad/s
     const phaseStep = 0.72;
 
     function tick(ms) {
