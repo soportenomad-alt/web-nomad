@@ -966,7 +966,7 @@ font-weight: 700;
   height: min(560px, calc(100vh - 140px));
   border-radius: 18px;
   border: 1px solid rgba(120, 180, 255, .28);
-  background: linear-gradient(180deg, rgba(13, 22, 44, .92), rgba(8, 12, 22, .92));
+  background: linear-gradient(180deg, rgba(42, 106, 200, .95), rgba(27, 79, 163, .95));
   box-shadow: 0 22px 60px rgba(0,0,0,.55);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -987,20 +987,21 @@ font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 12px 12px 10px 14px;
+  gap: 8px;
+  padding: 8px 12px;
   border-bottom: 1px solid rgba(242,247,255,.12);
 }
 
 .nomad-chat__title{
   font-weight: 800;
+  font-size: 15px;
   letter-spacing: .2px;
   line-height: 1.1;
 }
 .nomad-chat__subtitle{
-  font-size: 12px;
+  font-size: 11px;
   opacity: .78;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .nomad-chat__close{
@@ -1017,7 +1018,7 @@ font-weight: 700;
 }
 
 .nomad-chat__mount{
-  height: calc(100% - 58px);
+  height: calc(100% - 38px);
   padding: 0;
 }
 
@@ -1050,8 +1051,15 @@ font-weight: 700;
   --chat--border-radius: 16px;
   --chat--window--border-radius: 16px;
 
-  --chat--header--padding: 10px 14px;
+  /* Forzar tamaño 0 al header de n8n */
+  --chat--header-height: 0px !important;
+  --chat--header--padding: 0px !important;
   --chat--header--background: transparent;
+  
+  /* Asegurar que el fondo del chat principal no cree un bloque blanco separado */
+  --chat--body--background: transparent !important;
+  --chat--footer--background: transparent !important;
+  --chat--footer--border-top: 1px solid rgba(255,255,255,0.1) !important;
 
   --chat--textarea--border-radius: 14px;
   --chat--textarea--background: rgba(255,255,255,.06);
@@ -1060,8 +1068,10 @@ font-weight: 700;
   --chat--message--border-radius: 16px;
   --chat--message--user--background: rgba(77,163,255,.20);
   --chat--message--assistant--background: rgba(255,255,255,.06);
-
-  --chat--toggle--background: #4DA3FF; /* por si se usa modo toggle */
+  --chat--message--bot--background: rgba(255,255,255,.06) !important;
+  --chat--message--bot--color: rgba(242,247,255,1) !important;
+  
+  --chat--toggle--background: #4DA3FF;
 }
 
 /* En pantallas pequeñas: ocupa más ancho y baja el panel */
@@ -1106,49 +1116,20 @@ font-weight: 700;
   backdrop-filter: blur(10px);
 }
 
-/* Reduce el bloque de título grande en modo fullscreen (para que se vea más conversación) */
+/* Ocultar completamente el encabezado y textos de bienvenida internos de n8n */
+/* Ya tenemos nuestro propio encabezado (.nomad-chat__panelHeader) */
+.nomad-chat__mount header,
+.nomad-chat__mount .chat-header,
+.nomad-chat__mount [class*="chat-header"],
+.nomad-chat__mount .n8n-chat-header,
+.nomad-chat__mount .n8n-chat__header,
 .nomad-chat__mount .n8n-chat-widget-fullscreen h1,
-.nomad-chat__mount .n8n-chat-widget-fullscreen h2{
-  font-size: 20px !important;
-  line-height: 1.15 !important;
-  margin: 0 0 10px !important;
-}
-.nomad-chat__mount .n8n-chat-widget-fullscreen p{
-  margin: 0 0 12px !important;
-}
-
-/* Si existe una pantalla/hero de bienvenida, la compactamos */
+.nomad-chat__mount .n8n-chat-widget-fullscreen h2,
+.nomad-chat__mount .n8n-chat-widget-fullscreen p,
 .nomad-chat__mount .n8n-chat-welcome,
 .nomad-chat__mount .n8n-chat__welcome,
-.nomad-chat__mount [class*="welcome"]{
-  padding: 12px 14px !important;
-}
-
-/* Compacta el bloque azul (welcome/header) para que no tape la conversación */
-.nomad-chat__mount .n8n-chat-welcome,
-.nomad-chat__mount .n8n-chat__welcome,
-.nomad-chat__mount [class*="welcome"]{
-  max-height: 140px !important;
-  overflow: auto !important;
-}
-
-/* Cuando el usuario empieza a escribir, compacta aún más */
-.nomad-chat__mount.is-compact .n8n-chat-welcome,
-.nomad-chat__mount.is-compact .n8n-chat__welcome,
-.nomad-chat__mount.is-compact [class*="welcome"]{
-  max-height: 64px !important;
-  overflow: hidden !important;
-  padding: 10px 14px !important;
-}
-
-.nomad-chat__mount.is-compact .n8n-chat-widget-fullscreen h1,
-.nomad-chat__mount.is-compact .n8n-chat-widget-fullscreen h2{
-  font-size: 18px !important;
-  margin: 0 !important;
-  line-height: 1.1 !important;
-}
-
-.nomad-chat__mount.is-compact .n8n-chat-widget-fullscreen p{
+.nomad-chat__mount .chat-get-started,
+.nomad-chat__mount [class*="welcome"] {
   display: none !important;
 }
 
