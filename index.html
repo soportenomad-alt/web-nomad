@@ -12,6 +12,8 @@
 <!-- Coloca tu video en assets/hero.mp4 (recomendado). También funciona si lo dejas con el nombre original en assets/10661569-uhd_3840_2160_30fps.mp4 -->
 <link href="styles.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
+<!-- Swiper CSS for carousel -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <!-- Ajuste solicitado: Florence debe abrirse desde el botón flotante inferior derecho (antes WhatsApp) -->
 <style>
@@ -50,6 +52,7 @@
 <a href="#servicios">Pruebas y servicios</a>
 <a href="#flujo">Cómo funciona</a>
 <a href="#equipo">Equipo</a>
+<a href="#galeria">Galería</a>
 <a href="https://soporteti-desing.github.io/KAMS-NOMAD/" data-modal-url="https://soportenomad-alt.github.io/kam-nomad/" data-modal-title="Representantes">Representantes</a>
 
 <a class="btn btn--sm" href="#contacto">Agendar asesoría</a>
@@ -352,6 +355,36 @@
 </div>
 </div>
 </section>
+<!-- GALERIA -->
+<section class="section gallery-section" id="galeria">
+    <div class="container">
+        <div class="gallery-header" style="text-align: center; margin-bottom: 2rem;">
+            <h2>Nuestra Colección</h2>
+            <p>Explora nuestras más recientes fotografías en un formato moderno y fluido.</p>
+        </div>
+        
+        <!-- Swiper Carousel Container -->
+        <div class="swiper mySwiper gallery-swiper">
+            <div class="swiper-wrapper">
+                <!-- Batch 1 -->
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.45.jpeg" alt="Fotografía 1" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.46.jpeg" alt="Fotografía 2" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.47.jpeg" alt="Fotografía 3" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.48.jpeg" alt="Fotografía 4" loading="lazy"/></div>
+                <!-- Batch 2 (Duplicated for Infinite Loop) -->
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.45.jpeg" alt="Fotografía 1" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.46.jpeg" alt="Fotografía 2" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.47.jpeg" alt="Fotografía 3" loading="lazy"/></div>
+                <div class="swiper-slide"><img src="assets/gallery/WhatsApp%20Image%202026-04-01%20at%2013.15.48.jpeg" alt="Fotografía 4" loading="lazy"/></div>
+            </div>
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
 <!-- CONTACTO -->
 <section class="section" id="contacto">
 <div class="container">
@@ -576,6 +609,7 @@
   });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script defer="" src="script.js"></script>
 </body>
 </html>
