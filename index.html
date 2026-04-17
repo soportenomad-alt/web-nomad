@@ -610,6 +610,43 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script defer="" src="script.js"></script>
+<script>
+  // Inicializar galería Swiper una vez que el DOM esté listo
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Swiper !== 'undefined' && document.querySelector('.gallery-swiper')) {
+      new Swiper('.gallery-swiper', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        initialSlide: 1,
+        coverflowEffect: {
+          rotate: 25,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: true
+        },
+        loop: true,
+        speed: 800,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        },
+        pagination: {
+          el: '.gallery-swiper .swiper-pagination',
+          clickable: true,
+          dynamicBullets: true
+        },
+        navigation: {
+          nextEl: '.gallery-swiper .swiper-button-next',
+          prevEl: '.gallery-swiper .swiper-button-prev'
+        }
+      });
+    }
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>
