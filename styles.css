@@ -1292,3 +1292,54 @@ font-weight: 700;
 @media (max-width: 480px) {
     .gallery-swiper .swiper-slide { width: 180px; height: 260px; }
 }
+
+/* ==========================================================================
+   SECCIÓN DE DESCARGA DE APP (NOMAD MÓVIL)
+   ========================================================================== */
+#descargar-app {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), transparent 62%);
+  border-block: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+#descargar-app .phone-wrapper:hover {
+  transform: translateY(-8px) rotate(1.5deg);
+  box-shadow: 0 40px 90px rgba(108,178,255,.3);
+}
+
+@keyframes pulseGlowBlue {
+  0% { box-shadow: 0 16px 36px rgba(0,0,0,.35), 0 0 0 0 rgba(108,178,255, 0.4); }
+  70% { box-shadow: 0 16px 36px rgba(0,0,0,.35), 0 0 0 18px rgba(108,178,255, 0); }
+  100% { box-shadow: 0 16px 36px rgba(0,0,0,.35), 0 0 0 0 rgba(108,178,255, 0); }
+}
+
+.btn-download-pulse {
+  animation: pulseGlowBlue 2.5s infinite;
+  transition: transform .15s ease;
+}
+
+.btn-download-pulse:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  #descargar-app .zigzag {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  #descargar-app .app-download-actions {
+    align-items: center;
+  }
+  
+  #descargar-app .note {
+    text-align: left;
+  }
+
+  #descargar-app .zigzag__media {
+    order: -1; /* Teléfono arriba en móvil */
+  }
+}
+
