@@ -1,0 +1,1831 @@
+{
+  "version": "2026-11-09",
+  "moneda_y_precios": "La herramienta no muestra ni almacena precios.",
+  "textos": {
+    "entrega": "21 días hábiles tras el envío al laboratorio",
+    "cta": "Si requieres el precio o conocer algún detalle adicional de la prueba, da click aquí",
+    "mensaje_cta": "Hola, me gustaría conocer el precio y más detalles de la prueba {nombre}.",
+    "titulo_complementos": "Complementos de la prueba que se pueden añadir",
+    "aviso_legal": "Las pruebas de este portafolio requieren solicitud médica y deben interpretarse por un profesional de la salud junto con la historia clínica del paciente. Sus resultados no garantizan el acceso ni la respuesta a un tratamiento. Las aprobaciones de la FDA mencionadas corresponden a Estados Unidos. Los nombres de productos son marcas de sus respectivos titulares."
+  },
+  "tipos_cancer": {
+    "solidos": [
+      "Pulmón",
+      "Mama",
+      "Colorrectal",
+      "Próstata",
+      "Ovario",
+      "Páncreas",
+      "Gástrico",
+      "Melanoma",
+      "Vías biliares",
+      "Cerebro",
+      "Renal",
+      "Sarcomas",
+      "Otros tumores sólidos"
+    ],
+    "otros": [
+      "Hematológicos"
+    ]
+  },
+  "paneles": [
+    {
+      "id": 1,
+      "nombre": "Perfil integral amplio (pancáncer)",
+      "descripcion": "Un solo estudio para buscar, de forma amplia, lo que puede orientar el tratamiento."
+    },
+    {
+      "id": 2,
+      "nombre": "Enfermedad Mínima Residual (MRD)",
+      "descripcion": "Ver lo que todavía no aparece en una imagen."
+    },
+    {
+      "id": 3,
+      "nombre": "Perfil Hereditario",
+      "descripcion": "Conocer el riesgo es poder actuar a tiempo, por ti y por tu familia."
+    }
+  ],
+  "muestras": [
+    "Sólido (tejido FFPE)",
+    "Líquido (sangre)"
+  ],
+  "pruebas": [
+    {
+      "id": "P01",
+      "slug": "foundationone-cdx",
+      "nombre": "FoundationOne® CDx",
+      "marca": "Foundation Medicine · Roche",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "324",
+      "frase": "324 genes. Una sola muestra. Respaldo regulatorio en múltiples tipos de tumor.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "CDx aprobado por FDA (EE. UU.)",
+        "tipo": "ok"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Pulmón": "Aprobación FDA",
+        "Mama": "Aprobación FDA",
+        "Colorrectal": "Aprobación FDA",
+        "Próstata": "Aprobación FDA",
+        "Ovario": "Aprobación FDA",
+        "Melanoma": "Aprobación FDA",
+        "Vías biliares": "Aprobación FDA",
+        "Cerebro": "Aprobación FDA (glioma pediátrico)"
+      },
+      "paciente": {
+        "titulo": "Tu tumor tiene información que puede ayudar a tu médico a elegir el mejor camino.",
+        "parrafos": [
+          "Muchas veces, esta prueba se realiza con la muestra de la biopsia que ya te tomaron, así que puede no ser necesario repetir el procedimiento. El laboratorio busca en esa muestra cambios genéticos que ayuden a tu médico a saber si existe un tratamiento dirigido."
+        ],
+        "puntos": [
+          "<strong>Un solo estudio</strong> en lugar de varios análisis por separado.",
+          "<strong>Un plan pensado para ti</strong>, basado en las características de tu propio tumor.",
+          "<strong>Más claridad</strong> para conversar con tu médico sobre las opciones disponibles."
+        ],
+        "recuadro": null,
+        "nota": "No todas las personas tendrán un hallazgo que se traduzca en un tratamiento. Tu médico te explicará qué significan tus resultados. En algunos casos puede requerirse una nueva biopsia."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "324"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados que requieren perfil genómico integral para selección terapéutica.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "Sustituciones, indels y alteraciones del número de copias en 324 genes, más rearreglos selectos.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Diagnóstico complementario aprobado por la FDA (EE. UU.) con indicaciones en:",
+            "items": [
+              {
+                "texto": "<strong>Tumores sólidos (agnóstico):</strong> MSI-High y TMB ≥10 mut/Mb (pembrolizumab); NTRK1/2/3 (entrectinib, larotrectinib); fusiones RET (selpercatinib).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>CPCNP:</strong> EGFR, ALK, ROS1, BRAF V600E, MET exón 14.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Mama:</strong> ERBB2, PIK3CA, y AKT1/PIK3CA/PTEN (capivasertib + fulvestrant).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Colorrectal:</strong> KRAS/NRAS (cetuximab, panitumumab).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Próstata y ovario:</strong> BRCA1/2 y genes HRR.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Melanoma, colangiocarcinoma</strong> (FGFR2) y <strong>glioma pediátrico de bajo grado</strong> (BRAF).",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Concordancia frente a métodos de referencia (PPA / NPA)",
+            "texto": "EGFR ex19del/L858R 98.1% / 99.4% · KRAS 100% / 100% · ALK 92.9% / 100% · BRAF V600E 99.3% / 99.2% · ERBB2 amplificación 89.4% / 98.4%.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Un resultado negativo no descarta la presencia de una alteración. Los hallazgos fuera de las indicaciones CDx no son prescriptivos para el uso en etiqueta de un fármaco.",
+            "items": [],
+            "resaltar": true
+          },
+          {
+            "titulo": "Complemento FoundationOne RNA",
+            "texto": "Detecta fusiones, rearreglos y variantes de empalme en 318 genes por NGS de captura híbrida, a partir de tejido FFPE. Incluye AR-V7, EGFRvIII y omisión del exón 14 de MET. Prueba desarrollada en laboratorio, sin autorización ni aprobación de autoridad regulatoria.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "PD-L1 IHC",
+        "MMR IHC",
+        "FOLR1 IHC",
+        "CLAUDIN18 IHC",
+        "MET IHC",
+        "FoundationOne RNA"
+      ]
+    },
+    {
+      "id": "P03",
+      "slug": "foundationone-heme",
+      "nombre": "FoundationOne® Heme",
+      "marca": "Foundation Medicine · Roche",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "406 + 265 ARN",
+      "frase": "ADN y ARN para leucemias, linfomas, mielomas y sarcomas.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "Desarrollada en laboratorio",
+        "tipo": "ldt"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Hematológicos": "Indicada",
+        "Sarcomas": "Indicada"
+      },
+      "paciente": {
+        "titulo": "Entender tu diagnóstico con mayor detalle.",
+        "parrafos": [
+          "Los cánceres de la sangre y los sarcomas son muy diversos. Esta prueba ayuda a tu médico a precisar el tipo exacto de enfermedad, a estimar cómo podría comportarse y a buscar tratamientos dirigidos o estudios clínicos."
+        ],
+        "puntos": [
+          "<strong>Mayor precisión</strong> para entender tu diagnóstico.",
+          "<strong>Información para planear</strong>, junto con tu médico, los siguientes pasos.",
+          "<strong>Muestras flexibles</strong>, según tu caso."
+        ],
+        "recuadro": null,
+        "nota": "Tu equipo médico interpretará estos resultados junto con el resto de tus estudios."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "406 (ADN) + 265 (ARN)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Neoplasias hematológicas, sarcomas y tumores sólidos en los que importan las fusiones complejas y la subclasificación diagnóstica.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "Región codificante completa de <strong>406 genes</strong> (ADN), con intrones de 31 genes implicados en rearreglos (profundidad mediana ~500X).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>ARN de 265 genes</strong> frecuentemente reordenados, para fusiones conocidas y nuevas.",
+                "sub": []
+              },
+              {
+                "texto": "Sustituciones, indels, CNV y rearreglos, más <strong>TMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Desempeño",
+            "texto": "Concordancia PPA 99% / NPA 98% frente a prueba de referencia certificada por CLIA (configuración HiSeq). Precisión de 100% en variantes cortas, fusiones y CNV objetivo. MSI: 100% OPA. TMB: 97.4% OPA.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Límite de detección",
+            "texto": "Sustituciones 5% VAF · Indels 10% VAF · CNV 30% pureza tumoral · Fusiones 25 lecturas.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Identifica opciones terapéuticas y alteraciones pronósticas y ayuda a subclasificar el diagnóstico. Cada muestra se revisa por un hematopatólogo o patólogo anatómico. El informe es interpretado y firmado por patólogos certificados.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Prueba desarrollada en laboratorio, no autorizada ni aprobada por la FDA.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": [
+        "PD-L1 IHC",
+        "MMR IHC",
+        "FOLR1 IHC",
+        "CLAUDIN18 IHC",
+        "MET IHC"
+      ]
+    },
+    {
+      "id": "P11",
+      "slug": "tempus-xt",
+      "nombre": "Tempus xT",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "648",
+      "frase": "648 genes para una lectura profunda del tumor.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Cuanto mejor conocemos tu tumor, más opciones se pueden explorar.",
+        "parrafos": [
+          "Tempus xT analiza una gran cantidad de genes a partir de la muestra de tu tumor. Reúne en un solo estudio información que, de otro modo, podría requerir varias pruebas separadas, y ayuda a tu médico a buscar tratamientos dirigidos, inmunoterapia o estudios clínicos que puedan ser adecuados para ti."
+        ],
+        "puntos": [
+          "<strong>Menos estudios fragmentados</strong>, más información en un solo resultado.",
+          "<strong>Una búsqueda amplia</strong> de cambios genéticos relacionados con el cáncer.",
+          "<strong>Decisiones personalizadas</strong>, tomadas junto con tu médico."
+        ],
+        "recuadro": null,
+        "nota": "El resultado orienta a tu médico, pero no garantiza que exista un tratamiento específico para tu caso."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "648 (ADN)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados o metastásicos (pulmón, colon, mama, próstata y otros) en los que se requiere perfil somático amplio para seleccionar terapia dirigida o evaluar elegibilidad a inmunoterapia.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV, indels, CNV y rearreglos en 648 genes.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Identifica en un solo estudio alteraciones accionables (EGFR, KRAS, BRAF, ALK y otras) y biomarcadores de inmunoterapia, lo que agiliza la decisión terapéutica y la búsqueda de ensayos clínicos.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Secuenciación Illumina.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "MMR",
+        "PD-L1",
+        "HER2 IHC + FISH",
+        "FOLR1 IHC FDA",
+        "Immune Profile Score (IPS)",
+        "CLDN18",
+        "HRD",
+        "1p19q FISH",
+        "MGMT",
+        "c-MET"
+      ]
+    },
+    {
+      "id": "P12",
+      "slug": "tempus-xr",
+      "nombre": "Tempus xR",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "Transcriptoma completo",
+      "frase": "El transcriptoma completo para encontrar fusiones que el ADN no siempre muestra.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "A veces, la respuesta está en el ARN de tu tumor.",
+        "parrafos": [
+          "Algunos tumores crecen porque dos genes se unieron por error. Estas uniones se detectan mejor analizando el ARN, una molécula que refleja lo que las células están haciendo. Esta prueba lo estudia a partir de la muestra de tu tumor y ayuda a tu médico a saber si existe una opción dirigida a ese cambio."
+        ],
+        "puntos": [
+          "<strong>Una búsqueda especializada</strong> de alteraciones difíciles de encontrar.",
+          "<strong>Usa la muestra de tejido</strong> de tu biopsia o cirugía.",
+          "<strong>Puede sumar información</strong> a otros estudios que ya tengas."
+        ],
+        "recuadro": null,
+        "nota": "No siempre se encuentra una fusión. Tu médico te explicará qué significa tu resultado."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "Transcriptoma completo; fusiones en más de 100 genes objetivo"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos con perfil de ADN previo sin conductor identificado, o con alta sospecha de fusiones. También se puede solicitar sola o junto con xT.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "Fusiones y rearreglos clínicamente relevantes en más de 100 genes objetivo, entre ellos ALK, RET, ROS1, NTRK1/2/3, FGFR1/2/3, NRG1 y BRAF.",
+                "sub": []
+              },
+              {
+                "texto": "Splicing alterado: omisión del exón 14 de MET y EGFRvIII.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Desempeño (fabricante)",
+            "texto": "Sensibilidad de 97% en rearreglos y fusiones, 100% en MET exón 14 y 95.5% en EGFRvIII.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Evidencia",
+            "texto": "En un análisis pan-cáncer (n=2,118) con 1,106 fusiones accionables, 19% se identificó solo por ARN, 5% solo por ADN y 76% por ambos métodos.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "Tumor de origen (TO)",
+        "HRD",
+        "1p19q FISH",
+        "MGMT",
+        "c-MET"
+      ]
+    },
+    {
+      "id": "P13",
+      "slug": "tempus-xt-plus-xr",
+      "nombre": "Tempus xT + xR",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "648 + ARN",
+      "frase": "ADN y ARN en una sola solicitud.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Dos miradas a tu tumor en un solo estudio.",
+        "parrafos": [
+          "Esta prueba analiza tanto el ADN como el ARN de tu tumor. El ADN muestra qué cambios existen y el ARN ayuda a descubrir alteraciones que podrían pasar inadvertidas. Juntos dan a tu médico una imagen más completa para valorar tus opciones de tratamiento."
+        ],
+        "puntos": [
+          "<strong>Un solo estudio</strong> con dos tipos de análisis.",
+          "<strong>Más posibilidades de encontrar</strong> información útil para tu caso.",
+          "<strong>Decisiones personalizadas</strong>, tomadas junto con tu médico."
+        ],
+        "recuadro": null,
+        "nota": "El resultado orienta a tu médico, pero no garantiza que exista un tratamiento específico para tu caso."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "648 (ADN) + transcriptoma completo (ARN)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados o metastásicos en los que se busca maximizar la detección de alteraciones accionables, incluidas las fusiones.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV, indels, CNV y rearreglos en 648 genes.",
+                "sub": []
+              },
+              {
+                "texto": "Fusiones por ARN en más de 100 genes objetivo; MET exón 14 y EGFRvIII.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Según Tempus, 43.4% de los pacientes se emparejó con una terapia dirigida al combinar ADN, ARN y biomarcadores de inmunoterapia. Entre los pacientes con fusiones, incorporar ARN identificó 29% más con una fusión accionable única que el ADN solo.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Secuenciación Illumina.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "MMR",
+        "PD-L1",
+        "HER2 IHC + FISH",
+        "FOLR1 IHC FDA",
+        "Immune Profile Score (IPS)",
+        "CLDN18",
+        "HRD",
+        "1p19q FISH",
+        "MGMT",
+        "c-MET",
+        "Tumor de origen (TO)"
+      ]
+    },
+    {
+      "id": "P14",
+      "slug": "tempus-xt-plus-xr-normal-match",
+      "nombre": "Tempus xT + xR Normal Match",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE) + sangre periférica en tubo EDTA (lila)",
+      "genes": "648 + ARN",
+      "frase": "ADN, ARN y comparación tumor-normal en una sola solicitud.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Comparar tu tumor con tu sangre da resultados más claros.",
+        "parrafos": [
+          "Esta prueba estudia tu tumor y lo compara con una muestra de tu sangre. Así distingue mejor los cambios propios del tumor de aquellos con los que naciste. Además, analiza el ARN, otra molécula que puede revelar alteraciones que el ADN no siempre muestra."
+        ],
+        "puntos": [
+          "<strong>Resultados más precisos</strong> al comparar tumor y sangre.",
+          "<strong>Mayor profundidad</strong>, porque estudia ADN y ARN.",
+          "<strong>Más elementos</strong> para que tu médico elija un tratamiento personalizado."
+        ],
+        "recuadro": null,
+        "nota": "Si surge información sobre genes heredados, tu médico puede recomendarte asesoría genética."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE) + sangre periférica en tubo EDTA (lila)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "648 (ADN) + fusiones en más de 100 genes (ARN)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos en los que importa la precisión somática, o con sospecha de fusiones accionables no captadas por ADN.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV, indels, CNV y rearreglos en 648 genes.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Fusiones por ARN</strong> en más de 100 genes.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Normal Match:</strong> separa variantes somáticas de hallazgos germinales.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "El análisis conjunto reduce la ambigüedad en la interpretación somática y amplía la detección de fusiones en una sola solicitud.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Secuenciación Illumina.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "MMR",
+        "PD-L1",
+        "HER2 IHC + FISH",
+        "FOLR1 IHC FDA",
+        "Immune Profile Score (IPS)",
+        "CLDN18",
+        "HRD",
+        "1p19q FISH",
+        "MGMT",
+        "c-MET",
+        "Tumor de origen (TO)"
+      ]
+    },
+    {
+      "id": "P15",
+      "slug": "tempus-xe",
+      "nombre": "Tempus xE",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE) + muestra normal pareada (sangre o saliva)",
+      "genes": "Más de 19,000",
+      "frase": "Más de 19,000 genes: el exoma completo del tumor.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "La búsqueda más amplia, para los casos que lo necesitan.",
+        "parrafos": [
+          "Algunos casos poco comunes o complejos requieren mirar mucho más allá de los genes habituales. Esta prueba estudia prácticamente todos los genes del tumor y los compara con una muestra normal de tu cuerpo, lo que ayuda a tu médico a buscar pistas que un panel más pequeño podría no incluir."
+        ],
+        "puntos": [
+          "<strong>Una búsqueda muy amplia</strong> de cambios en tu tumor.",
+          "<strong>Comparación con tu muestra normal</strong> para resultados más confiables.",
+          "<strong>Útil en casos complejos</strong>, según lo valore tu médico."
+        ],
+        "recuadro": null,
+        "nota": "Esta prueba no sustituye a un estudio de cáncer hereditario. Si aparece un posible hallazgo heredado, tu médico puede recomendarte asesoría genética y una prueba confirmatoria."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE) + muestra normal pareada (sangre o saliva)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "Más de 19,000 (exoma completo)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores raros o complejos en los que un panel dirigido resulta insuficiente. Requiere contenido tumoral de al menos 40% tras macrodisección.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "Exoma de más de 19,000 genes, con cobertura de 300x en 648 genes reforzados y 250x en el resto.",
+                "sub": []
+              },
+              {
+                "texto": "SNV, indels, pérdidas y ganancias del número de copias.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>TMB</strong> y posibles hallazgos germinales en un conjunto limitado de 110 genes.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Desempeño (fabricante, sensibilidad / especificidad)",
+            "texto": "SNV en regiones reforzadas 97.9% / 99.9% (5% VAF) · Regiones no reforzadas 93.6% / 99.9% (10% VAF) · Indels reforzados 92.6% / 99.9% · Ganancias de copias: sensibilidad de 85.7%.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "xE no es un panel germinal validado. Los posibles hallazgos germinales no deben usarse como determinación diagnóstica de riesgo hereditario.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P20",
+      "slug": "onco-idx-tissue",
+      "nombre": "Onco IDX Tissue",
+      "marca": "NOMAD",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Sólido (tejido FFPE)",
+      "muestra": "Sólido (tejido FFPE)",
+      "genes": "517",
+      "frase": "517 genes, ADN y ARN, para muestras con poco material.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Incluso una muestra pequeña puede dar información valiosa.",
+        "parrafos": [
+          "A veces la biopsia aporta muy poco material. Esta prueba está diseñada para trabajar con cantidades pequeñas y estudiar muchos genes a la vez, lo que puede ayudar a que tu médico obtenga información de tu tumor sin necesidad de repetir procedimientos."
+        ],
+        "puntos": [
+          "<strong>Aprovecha al máximo</strong> la muestra disponible.",
+          "<strong>Analiza muchos genes</strong> en un solo estudio.",
+          "<strong>Da a tu médico más elementos</strong> para valorar tus opciones."
+        ],
+        "recuadro": null,
+        "nota": "Tu médico te explicará el alcance y las limitaciones de esta prueba."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sólido (tejido FFPE)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "517 (ADN y ARN)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos con muestra limitada en los que se busca perfil amplio de ADN y ARN.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV, indels, CNV (incluyendo grandes rearreglos en BRCA1/2) y fusiones en 517 genes.",
+                "sub": []
+              },
+              {
+                "texto": "Más de 1,300 isoformas de fusión en 49 genes conductores.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>HRD:</strong> 47 genes HRR más métrica de inestabilidad genómica (GIM).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>TMB:</strong> más de 1 Mb de cobertura exónica. <strong>MSI:</strong> 76 marcadores.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Desempeño analítico reportado (sensibilidad / especificidad)",
+            "texto": "SNV 99.6% / 97.6% · Indels 99.5% / 98.1% · CNV ganancia 97.6% / 99.9% · Fusiones 100% / 97.5%.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Ventaja técnica",
+            "texto": "Requiere solo 20 ng de ADN o ARN, con una tasa de éxito cercana a 94% en un estudio multicéntrico europeo (193 muestras pan-cáncer).",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Oncomine Comprehensive Assay Plus (Ion Torrent).",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P08",
+      "slug": "guardant360-cdx",
+      "nombre": "Guardant360® CDx",
+      "marca": "Guardant Health",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica en tubos Streck",
+      "genes": "55",
+      "frase": "La biopsia líquida con aprobación FDA, enfocada en lo esencial.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "CDx aprobado por FDA (EE. UU.)",
+        "tipo": "ok"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Pulmón": "Aprobación FDA",
+        "Mama": "Aprobación FDA",
+        "Colorrectal": "Aprobación FDA"
+      },
+      "paciente": {
+        "titulo": "Con una toma de sangre, información para tu tratamiento.",
+        "parrafos": [
+          "Los tumores liberan fragmentos de su ADN a la sangre. Esta prueba los analiza para buscar cambios específicos que pueden ayudar a tu médico a elegir un tratamiento dirigido, sin necesidad de una biopsia de tejido."
+        ],
+        "puntos": [
+          "<strong>Sencilla:</strong> una toma de sangre.",
+          "<strong>Enfocada</strong> en los cambios con mayor relevancia para el tratamiento.",
+          "<strong>Útil</strong> cuando no hay tejido disponible."
+        ],
+        "recuadro": null,
+        "nota": "Si la prueba no encuentra una alteración, no significa que el tumor no la tenga. Tu médico podría recomendar un estudio de tejido."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica en tubos Streck"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "55 reportados"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados cuando se busca un perfil dirigido en plasma para selección terapéutica.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV e indels en <strong>55 genes</strong> (diseño de 74).",
+                "sub": []
+              },
+              {
+                "texto": "Amplificaciones: ERBB2, MET.",
+                "sub": []
+              },
+              {
+                "texto": "Fusiones: ALK, NTRK1, RET, ROS1.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Diagnóstico complementario aprobado por la FDA (EE. UU.) desde 2020. Sus siete indicaciones incluyen CPCNP (EGFR, KRAS G12C, ERBB2), mama (ESR1) y colorrectal (BRAF V600E).",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Un resultado negativo en plasma no garantiza que el tumor sea negativo; se recomienda reflejar a tejido si es factible.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P09",
+      "slug": "guardant360-cdx-expanded",
+      "nombre": "Guardant360® CDx Expanded",
+      "marca": "Guardant Health",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "2 tubos Streck de 10 mL",
+      "genes": "741",
+      "frase": "741 genes y epigenómica en una sola toma de sangre.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "CDx aprobado por FDA (EE. UU.)",
+        "tipo": "ok"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Pulmón": "Aprobación FDA",
+        "Mama": "Aprobación FDA",
+        "Colorrectal": "Aprobación FDA"
+      },
+      "paciente": {
+        "titulo": "Una toma de sangre puede dar respuestas importantes.",
+        "parrafos": [
+          "Los tumores liberan pequeños fragmentos de su ADN a la sangre. Esta prueba los busca y los analiza con una toma de sangre sencilla, sin cirugía y sin necesidad de una nueva biopsia de tejido, y entrega información útil para que tu médico valore tu tratamiento."
+        ],
+        "puntos": [
+          "<strong>Sencilla:</strong> una toma de sangre, como la de cualquier análisis.",
+          "<strong>Rápida:</strong> resultados pensados para no retrasar decisiones.",
+          "<strong>Útil cuando no hay biopsia disponible</strong> o cuando tu enfermedad ha cambiado."
+        ],
+        "recuadro": null,
+        "nota": "Si la prueba no encuentra una alteración, no significa que el tumor no la tenga. Tu médico podría recomendar un estudio de tejido."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Versión",
+            "valor": "Guardant360® Liquid CDx"
+          },
+          {
+            "etiqueta": "Muestra",
+            "valor": "2 tubos Streck de 10 mL"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "741 (SNV e indels)"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados, al diagnóstico o en progresión, en especial con tejido insuficiente, biopsia de alto riesgo o necesidad de un resultado rápido.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV e indels en <strong>741 genes</strong>. Amplificaciones: ERBB2, MET. Pérdida: BRCA1.",
+                "sub": []
+              },
+              {
+                "texto": "Rearreglos en 9 genes: ALK, RET, ROS1, NRG1, NTRK1/2/3, FGFR2, FGFR3.",
+                "sub": []
+              },
+              {
+                "texto": "Reporte profesional (746 genes, fuera de la aprobación FDA): MSI-High, bTMB, HBV/EBV, farmacogenómica y tipificación HLA.",
+                "sub": []
+              },
+              {
+                "texto": "Integra señales genómicas y epigenómicas de una sola muestra (Smart Platform).",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Aprobada por la FDA (EE. UU.) en mayo de 2026. Guardant Health la describe como el panel de biopsia líquida aprobado por la FDA de mayor tamaño. Indicaciones de diagnóstico complementario:",
+            "items": [
+              {
+                "texto": "<strong>Mama:</strong> ESR1 (elacestrant; imlunestrant).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Colorrectal:</strong> BRAF V600E (encorafenib + cetuximab).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>CPCNP:</strong> EGFR ex19del/L858R/T790M (osimertinib); EGFR inserciones ex20 (amivantamab); KRAS G12C (sotorasib); ERBB2/HER2 activadoras (trastuzumab deruxtecán).",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Sensibilidad",
+            "texto": "Según el fabricante, reporta variantes desde 0.001% MAF y aumenta varias veces la sensibilidad para ctDNA frente al Guardant360 CDx anterior.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Un resultado negativo en plasma no garantiza que el tumor sea negativo; se recomienda reflejar a tejido si es factible. Las alteraciones pueden ser somáticas, germinales o de hematopoyesis clonal (CHIP). La liberación de ctDNA puede ser menor en tumores primarios del SNC.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P05",
+      "slug": "foundationone-liquid-cdx",
+      "nombre": "FoundationOne® Liquid CDx",
+      "marca": "Foundation Medicine · Roche",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "2 tubos de sangre periférica (kit FoundationOne Liquid CDx)",
+      "genes": "324",
+      "frase": "La profundidad de Foundation Medicine, ahora desde la sangre.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "CDx aprobado por FDA (EE. UU.)",
+        "tipo": "ok"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Pulmón": "Aprobación FDA",
+        "Mama": "Aprobación FDA",
+        "Colorrectal": "Aprobación FDA",
+        "Próstata": "Aprobación FDA"
+      },
+      "paciente": {
+        "titulo": "Cuando una biopsia no es posible, tu sangre puede ayudar.",
+        "parrafos": [
+          "Si no hay suficiente tejido o una nueva biopsia es complicada, esta prueba analiza el ADN tumoral presente en la sangre. Con dos tubos de sangre, tu médico puede obtener información sobre las características de tu tumor y sobre las opciones que podrían convenirte."
+        ],
+        "puntos": [
+          "<strong>Sin cirugía:</strong> se realiza con una toma de sangre.",
+          "<strong>Información amplia</strong> en un solo estudio.",
+          "<strong>Una opción valiosa</strong> cuando el tejido no está disponible."
+        ],
+        "recuadro": null,
+        "nota": "Un resultado negativo no significa que el tumor no tenga cambios genéticos. Tu médico podría indicar un estudio adicional."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "2 tubos de sangre periférica (kit FoundationOne Liquid CDx)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "324"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados, cuando el tejido es insuficiente o inaccesible, o cuando se busca una evaluación en sangre.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "Interroga 324 genes. Aprobada para reportar sustituciones e indels en 311 genes, rearreglos en 8 y alteraciones del número de copias en 3.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>bTMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Diagnóstico complementario aprobado por la FDA (EE. UU.):",
+            "items": [
+              {
+                "texto": "<strong>Mama:</strong> PIK3CA (alpelisib; inavolisib + palbociclib + fulvestrant).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Colorrectal:</strong> BRAF V600E (encorafenib + cetuximab).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>CPCNP:</strong> EGFR, ALK, ROS1, BRAF V600E, MET exón 14.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Próstata:</strong> ATM, BRCA1/2 (olaparib y combinaciones; rucaparib; niraparib + abiraterona).",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Agnóstico:</strong> NTRK1/2/3 (entrectinib).",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Límite de detección (mediana)",
+            "texto": "Variantes cortas 0.40% VAF (75 genes de sensibilidad aumentada), 0.82% VAF (resto) · Rearreglos 0.37% / 0.90% VAF · Amplificaciones 21.7% fracción tumoral.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Los pacientes negativos para las mutaciones de la indicación deben reflejarse a tejido, si es factible. Para entrectinib (NTRK, ROS1) y tepotinib, el plasma solo es apropiado cuando no se dispone de tejido.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P17",
+      "slug": "tempus-xf",
+      "nombre": "Tempus xF",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "2 tubos Streck de 8.5 mL",
+      "genes": "105",
+      "frase": "105 genes en sangre, centrados en lo accionable.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Una toma de sangre para entender qué está pasando.",
+        "parrafos": [
+          "Cuando no hay suficiente tejido o la enfermedad cambia, esta prueba busca en tu sangre los cambios genéticos más relevantes del tumor. Así tu médico puede valorar si un tratamiento dirigido podría convenirte."
+        ],
+        "puntos": [
+          "<strong>Sin procedimientos invasivos:</strong> solo una toma de sangre.",
+          "<strong>Enfocada</strong> en cambios relacionados con el tratamiento.",
+          "<strong>Una alternativa</strong> cuando no es posible estudiar tejido."
+        ],
+        "recuadro": null,
+        "nota": "Tu médico interpretará el resultado junto con el resto de tu información clínica."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "2 tubos Streck de 8.5 mL"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "105"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados con tejido insuficiente o en evaluación de mecanismos de resistencia.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV e indels en 105 genes, con ganancias de copias en 6 y rearreglos en 7.",
+                "sub": []
+              },
+              {
+                "texto": "Mutaciones oncogénicas y de resistencia.",
+                "sub": []
+              },
+              {
+                "texto": "Estado <strong>MSI-High</strong> y <strong>bTMB</strong> (este último solo en el laboratorio de Chicago).",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "En un análisis pan-cáncer metastásico, 9% de los pacientes con variantes accionables tuvo alteraciones únicas en biopsia líquida no detectadas en tejido, según Tempus.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "No está indicada para neoplasias hematológicas.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": [
+        "RightMed® Comprehensive (farmacogenómica)",
+        "DPYD + UGT1A1"
+      ]
+    },
+    {
+      "id": "P16",
+      "slug": "tempus-xf-plus",
+      "nombre": "Tempus xF+",
+      "marca": "Tempus",
+      "panel_id": 1,
+      "panel": "Perfil integral amplio (pancáncer)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica en tubo Streck Cell-Free DNA BCT®",
+      "genes": "523",
+      "frase": "523 genes en sangre para detectar lo accionable y lo que genera resistencia.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Si tu enfermedad cambia, tu tratamiento también puede cambiar.",
+        "parrafos": [
+          "Con el tiempo, un tumor puede transformarse y dejar de responder a un medicamento. Con una toma de sangre, esta prueba ayuda a tu médico a entender qué está ocurriendo y a valorar si conviene explorar otra opción."
+        ],
+        "puntos": [
+          "<strong>Sin procedimientos invasivos:</strong> solo una toma de sangre.",
+          "<strong>Ayuda a entender</strong> por qué un tratamiento podría haber dejado de funcionar.",
+          "<strong>Una alternativa</strong> cuando no es posible estudiar tejido."
+        ],
+        "recuadro": null,
+        "nota": "Tu médico interpretará el resultado junto con el resto de tu información clínica."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica en tubo Streck Cell-Free DNA BCT®"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "523"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Tumores sólidos avanzados, con especial valor en la progresión a terapia dirigida o cuando el tejido no es viable.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV, indels, CNV y rearreglos en 523 genes basados en ctDNA.",
+                "sub": []
+              },
+              {
+                "texto": "Variantes oncogénicas y <strong>de resistencia</strong>.",
+                "sub": []
+              },
+              {
+                "texto": "Firmas genómicas: <strong>bTMB</strong> y <strong>MSI</strong>.",
+                "sub": []
+              },
+              {
+                "texto": "Identifica variantes potencialmente asociadas con <strong>hematopoyesis clonal de potencial indeterminado (CHIP)</strong>, lo que apoya una interpretación más precisa.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Permite evaluar mecanismos de resistencia y opciones de siguiente línea sin una nueva biopsia de tejido.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Secuenciación Illumina.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": [
+        "RightMed® Comprehensive (farmacogenómica)",
+        "DPYD + UGT1A1"
+      ]
+    },
+    {
+      "id": "P10",
+      "slug": "guardant-reveal",
+      "nombre": "Guardant Reveal™",
+      "marca": "Guardant Health",
+      "panel_id": 2,
+      "panel": "Enfermedad Mínima Residual (MRD)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)",
+      "genes": "Más de 20,000 señales",
+      "frase": "Seguimiento de la enfermedad desde la sangre, sin necesidad de tejido.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "Desarrollada en laboratorio",
+        "tipo": "ldt"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {
+        "Colorrectal": "MRD y vigilancia",
+        "Mama": "MRD y vigilancia",
+        "Pulmón": "MRD y vigilancia"
+      },
+      "paciente": {
+        "titulo": "Después del tratamiento, más información y menos incertidumbre.",
+        "parrafos": [
+          "Terminar una cirugía o un tratamiento trae alivio y también preguntas. Con una toma de sangre, esta prueba busca señales muy pequeñas del tumor, y no necesita una muestra de tu biopsia. Tu médico puede usarla, junto con tus demás estudios, para decidir cómo darte seguimiento y si conviene ajustar tu plan."
+        ],
+        "puntos": [
+          "<strong>Sencilla:</strong> solo una toma de sangre.",
+          "<strong>Sin depender de tu biopsia</strong> original.",
+          "<strong>Seguimiento en el tiempo</strong>, para actuar con información oportuna."
+        ],
+        "recuadro": null,
+        "nota": "Un resultado negativo no descarta por completo la enfermedad, y un resultado positivo debe valorarse con tu médico. Esta prueba complementa tus revisiones habituales, no las reemplaza."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"
+          },
+          {
+            "etiqueta": "Tecnología",
+            "valor": "más de 20,000 señales epigenómicas"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Enfermedad residual molecular (MRD) tras cirugía y vigilancia de recurrencia en colorrectal, mama (carcinoma invasivo e inflamatorio) y CPCNP. Monitoreo de respuesta a terapia en tumores sólidos avanzados.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Tecnología",
+            "texto": "Ensayo sin tejido basado en metilación, con más de 20,000 regiones epigenómicas. Reporta fracción tumoral para cuantificar la carga de enfermedad. Límite de detección de <strong>0.005%</strong> en colorrectal (MRD).",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Evidencia",
+            "texto": "",
+            "items": [
+              {
+                "texto": "<strong>COSMOS</strong> (colorrectal resecado, 342 pacientes, 1,977 muestras, <em>Clin Cancer Res</em> 2024):",
+                "sub": [
+                  "Sensibilidad longitudinal: <strong>81%</strong> en colon estadio II o mayor y <strong>60%</strong> en recto.",
+                  "Especificidad: <strong>98.2%</strong>.",
+                  "Anticipación mediana a la recurrencia: <strong>5.3 meses</strong> (máximo 28.7).",
+                  "VPN superior a 91% para recurrencia a un año.",
+                  "100% de pacientes evaluables sin necesidad de tejido."
+                ]
+              },
+              {
+                "texto": "<strong>Mama:</strong> especificidad de 100% y anticipación mediana de 7.9 meses.",
+                "sub": []
+              },
+              {
+                "texto": "<strong>Monitoreo de quimioterapia (pan-cáncer):</strong> el aumento de la señal identificó progresión hasta 18 meses antes que las medidas clínicas estándar, con una anticipación mediana de 2.3 meses.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Prueba desarrollada en laboratorio, no autorizada ni aprobada por la FDA. El desempeño varía según el tipo de tumor, el estadio y el momento de la toma.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P18",
+      "slug": "tempus-xm-mrd",
+      "nombre": "Tempus xM MRD",
+      "marca": "Tempus",
+      "panel_id": 2,
+      "panel": "Enfermedad Mínima Residual (MRD)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)",
+      "genes": "Metilación + variantes",
+      "frase": "Detección de enfermedad residual en colon y recto, sin necesidad de tejido.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": false,
+      "tipos_cancer": {
+        "Colorrectal": "Validada en estadios II y III"
+      },
+      "paciente": {
+        "titulo": "Después de tu cirugía, un dato más para decidir.",
+        "parrafos": [
+          "Tras operar un cáncer de colon o recto, pueden quedar señales mínimas de la enfermedad. Con una toma de sangre y sin necesitar una muestra de tu tumor, esta prueba las busca para ayudar a tu médico a planear tu tratamiento y tu seguimiento."
+        ],
+        "puntos": [
+          "<strong>Sencilla:</strong> una toma de sangre.",
+          "<strong>No requiere</strong> la muestra de tu tumor.",
+          "<strong>Ayuda a planear</strong> los siguientes pasos con tu médico."
+        ],
+        "recuadro": null,
+        "nota": "Un resultado negativo no descarta por completo la enfermedad. Esta prueba complementa tus revisiones habituales, no las reemplaza."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"
+          },
+          {
+            "etiqueta": "Tecnología",
+            "valor": "Metilación + variantes genómicas"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Cáncer colorrectal estadio II o III tras cirugía con intención curativa.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Tecnología",
+            "texto": "Ensayo sin tejido (<em>tumor-naïve</em>) que integra metilación y variantes genómicas para emitir un resultado binario: MRD positivo o negativo.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Evidencia",
+            "texto": "Subanálisis de GALAXY / CIRCULATE-Japan (<em>Clin Cancer Res</em>, 80 participantes):",
+            "items": [
+              {
+                "texto": "En el punto de referencia: sensibilidad de <strong>61.1%</strong> y especificidad de <strong>87.9%</strong>.",
+                "sub": []
+              },
+              {
+                "texto": "Longitudinal (74 evaluables): sensibilidad de <strong>83.3%</strong> y especificidad de <strong>89.5%</strong>.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Validada analíticamente para cáncer colorrectal estadio II y III. Un resultado negativo no excluye recurrencia.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P07",
+      "slug": "foundationone-monitor",
+      "nombre": "FoundationOne® Monitor",
+      "marca": "Foundation Medicine · Roche",
+      "panel_id": 2,
+      "panel": "Enfermedad Mínima Residual (MRD)",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica (tubo: <span class=\"pend\">por confirmar</span>)",
+      "genes": "324",
+      "frase": "Medir la carga tumoral a lo largo del tratamiento.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": {
+        "texto": "Desarrollada en laboratorio",
+        "tipo": "ldt"
+      },
+      "aplica_todos_solidos": true,
+      "tipos_cancer": {},
+      "paciente": {
+        "titulo": "Una forma adicional de saber cómo vas.",
+        "parrafos": [
+          "Esta prueba mide, con una toma de sangre, cuánto ADN del tumor circula en tu cuerpo. Al repetirla en distintos momentos, tu médico obtiene un dato más para valorar cómo evoluciona tu enfermedad y si el tratamiento está funcionando como se espera."
+        ],
+        "puntos": [
+          "<strong>Una simple toma de sangre</strong>, repetible a lo largo del tiempo.",
+          "<strong>Un dato adicional</strong> para complementar tus estudios.",
+          "<strong>Mejor conversación</strong> con tu médico sobre tu avance."
+        ],
+        "recuadro": null,
+        "nota": "Un resultado negativo no significa con certeza que no haya cáncer, y en algunos tumores la prueba puede tener menor sensibilidad."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica (tubo: <span class=\"pend\">por confirmar</span>)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "324"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Seguimiento longitudinal en pacientes con cáncer ya diagnosticado.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "<strong>Fracción tumoral de ctDNA</strong> como biomarcador de carga tumoral.",
+                "sub": []
+              },
+              {
+                "texto": "Sustituciones e indels en 311 genes, alteraciones del número de copias en 310 y rearreglos en 324.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Además de la tendencia cuantitativa de la fracción tumoral, reporta alteraciones genómicas en la misma muestra, lo que aporta información sobre cambios moleculares a lo largo del tratamiento.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "A considerar",
+            "texto": "Prueba desarrollada en laboratorio, sin autorización ni aprobación de autoridad regulatoria. Sensibilidad limitada en cánceres con baja liberación de ctDNA. Un resultado negativo no indica definitivamente la ausencia de cáncer.",
+            "items": [],
+            "resaltar": true
+          }
+        ]
+      },
+      "complementos": []
+    },
+    {
+      "id": "P19",
+      "slug": "invitae-multi-cancer-panel",
+      "nombre": "Invitae Multi-Cancer Panel",
+      "marca": "Invitae",
+      "panel_id": 3,
+      "panel": "Perfil Hereditario",
+      "muestra_grupo": "Líquido (sangre)",
+      "muestra": "Sangre periférica en tubo EDTA (lila)",
+      "genes": "71",
+      "frase": "71 genes para responder una pregunta familiar.",
+      "entrega": "21 días hábiles tras el envío al laboratorio",
+      "etiqueta": null,
+      "aplica_todos_solidos": false,
+      "tipos_cancer": {
+        "Mama": "Riesgo hereditario",
+        "Ovario": "Riesgo hereditario",
+        "Colorrectal": "Riesgo hereditario",
+        "Próstata": "Riesgo hereditario",
+        "Páncreas": "Riesgo hereditario",
+        "Gástrico": "Riesgo hereditario",
+        "Melanoma": "Riesgo hereditario",
+        "Pulmón": "Riesgo hereditario",
+        "Renal": "Riesgo hereditario",
+        "Cerebro": "Riesgo hereditario",
+        "Sarcomas": "Riesgo hereditario",
+        "Otros tumores sólidos": "Riesgo hereditario"
+      },
+      "paciente": {
+        "titulo": "Saber puede ayudarte a cuidar de ti y de quienes más quieres.",
+        "parrafos": [
+          "Algunos cánceres se presentan con más frecuencia en ciertas familias. Con una muestra de sangre, esta prueba busca cambios genéticos heredados que aumentan el riesgo de desarrollar ciertos tipos de cáncer. Con esa información, tu médico puede proponer un plan de vigilancia a tu medida y orientar a tus familiares."
+        ],
+        "puntos": [
+          "<strong>Prevención y detección temprana</strong> con un plan personalizado.",
+          "<strong>Información valiosa para tu familia</strong>, que podría beneficiarse de estudiarse.",
+          "<strong>Una decisión acompañada:</strong> te recomendamos asesoría genética antes y después de la prueba."
+        ],
+        "recuadro": "<strong>¿Podría ser para ti?</strong> Si tuviste cáncer a una edad temprana, varios tipos de cáncer, cáncer en ambos órganos de un par (por ejemplo, ambos senos), o si varios familiares cercanos tuvieron el mismo tipo de cáncer, coméntalo con tu médico.",
+        "nota": "Tener una variante no significa que desarrollarás cáncer, y no encontrarla no elimina el riesgo por completo."
+      },
+      "medico": {
+        "datos": [
+          {
+            "etiqueta": "Muestra",
+            "valor": "Sangre periférica en tubo EDTA (lila)"
+          },
+          {
+            "etiqueta": "Genes",
+            "valor": "71"
+          },
+          {
+            "etiqueta": "Entrega",
+            "valor": "21 días hábiles tras el envío al laboratorio"
+          }
+        ],
+        "secciones": [
+          {
+            "titulo": "Escenario clínico",
+            "texto": "Pacientes con historia personal o familiar de cáncer en múltiples sistemas, o con datos sugestivos: diagnóstico a edad inusualmente temprana, tumores primarios múltiples, bilateralidad en órganos pares, agregación familiar o fenotipos atípicos (por ejemplo, cáncer de mama en hombres).",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Biomarcadores",
+            "texto": "",
+            "items": [
+              {
+                "texto": "SNV e indels en <strong>71 genes</strong> de predisposición a cánceres de inicio en la edad adulta: mama, ginecológicos, endocrinos, piel y sistema nervioso, entre otros.",
+                "sub": []
+              },
+              {
+                "texto": "Incluye BRCA1/2, genes de Lynch (MLH1, MSH2, MSH6, PMS2, EPCAM), APC, MUTYH, TP53, PTEN, RET, VHL y CDH1.",
+                "sub": []
+              }
+            ],
+            "resaltar": false
+          },
+          {
+            "titulo": "Sensibilidad clínica (proporción de casos atribuida al gen)",
+            "texto": "HBOC, BRCA1/2: 60%-85% · Lynch: MLH1 42%, MSH2 33%, MSH6 18% · MEN2, RET: más de 95% · NF1: más de 90% · Poliposis adenomatosa: APC 60%-85%.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Utilidad clínica",
+            "texto": "Ayuda a confirmar el diagnóstico clínico, orienta pronóstico y vigilancia, favorece la detección temprana, informa el asesoramiento genético y la planificación familiar, y puede apoyar la inclusión en ensayos clínicos. La evaluación amplia resuelve de manera eficiente un fenotipo genéticamente heterogéneo.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "Plataforma",
+            "texto": "Secuenciación Illumina.",
+            "items": [],
+            "resaltar": false
+          },
+          {
+            "titulo": "TAT",
+            "texto": "21 días hábiles tras el envío al laboratorio.",
+            "items": [],
+            "resaltar": false
+          }
+        ]
+      },
+      "complementos": []
+    }
+  ]
+}

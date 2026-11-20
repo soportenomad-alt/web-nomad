@@ -17,8 +17,7 @@
 
   <style>
     :root {
-      --bg:#0b0f14; --card:#0f1720; --text:#e6eef7; --muted:#a8b3c2;
-      --line: rgba(255,255,255,.10); --link:#7cc3ff;
+      --bg:#FFFFFF; --card:#F8FAFC; --text:#1E1B2E; --muted:#475569; --line:#E2E8F0; --link:#441F43; --plum:#441F43;
     }
     * { box-sizing: border-box; }
     body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
@@ -26,32 +25,32 @@
     .nav {
       display:flex; align-items:center; justify-content:space-between; gap:16px;
       padding: 14px 18px; border:1px solid var(--line); border-radius: 14px;
-      background: rgba(255,255,255,.03); position: sticky; top: 12px; backdrop-filter: blur(8px);
+      background: #FFFFFF; position: sticky; top: 12px; backdrop-filter: blur(8px);
     }
     .brand { font-weight: 800; text-decoration:none; color: var(--text); }
     .links a { color: var(--muted); text-decoration:none; margin-left: 14px; font-size: 14px; }
     .links a:hover { color: var(--text); }
     .links .cta {
       color: var(--text); border:1px solid var(--line); padding: 8px 10px; border-radius: 12px;
-      background: rgba(124,195,255,.10);
+      background: #441F43; color: #FFFFFF;
     }
     header { padding: 28px 0 12px; }
     h1 { margin: 14px 0 8px; font-size: 34px; line-height: 1.1; }
     p { color: var(--muted); line-height: 1.6; }
     .grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin-top: 18px; }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-    .card { border:1px solid var(--line); border-radius: 16px; padding: 18px; background: rgba(255,255,255,.03); }
+    .card { border:1px solid var(--line); border-radius: 16px; padding: 18px; background: #FFFFFF; }
     ul { margin: 10px 0 0 18px; color: var(--muted); }
     .actions { display:flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
     .btn { display:inline-block; padding: 10px 14px; border-radius: 12px; text-decoration:none; border:1px solid var(--line); color: var(--text); background: rgba(255,255,255,.04); }
-    .btn.primary { background: rgba(124,195,255,.18); }
+    .btn.primary { background: #441F43; color: #FFFFFF; }
     .faq { border-top:1px solid var(--line); padding: 10px 0; }
     .faq summary { cursor:pointer; color: var(--text); }
     .faq p { margin: 8px 0 0; }
     footer { margin: 26px 0 10px; color: var(--muted); font-size: 13px; }
     label { display:block; margin-top: 10px; color: var(--muted); font-size: 14px; }
-    input, textarea { width:100%; margin-top: 6px; padding: 10px 12px; border-radius: 12px; border:1px solid var(--line); background: rgba(0,0,0,.25); color: var(--text); }
-    button { margin-top: 12px; padding: 10px 14px; border-radius: 12px; border:1px solid var(--line); background: rgba(124,195,255,.18); color: var(--text); cursor:pointer; }
+    input, textarea { width:100%; margin-top: 6px; padding: 10px 12px; border-radius: 12px; border:1px solid var(--line); background: #FFFFFF; color: var(--text); }
+    button { margin-top: 12px; padding: 10px 14px; border-radius: 12px; border:1px solid var(--line); background: #441F43; color: #FFFFFF; color: var(--text); cursor:pointer; }
     .note { font-size: 12px; }
   </style>
 

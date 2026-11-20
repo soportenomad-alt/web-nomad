@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio de Oncología de Precisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+/* Catálogo clínico: banda azul marino, tarjetas agrupadas por panel y muestra, ficha emergente con doble perspectiva. */
+:root {
+  color-scheme: light;
+  --navy: #0b2545;
+  --deep: #0e5a5c;
+  --teal: #0b7a68;
+  --mint: #86e0c8;
+  --gold: #a9791c;
+  --ink: #1b2b3f;
+  --muted: #5a6a7c;
+  --line: #dde5ea;
+  --bg: #f3f6f8;
+  --surface: #ffffff;
+  --tint: #e8f4f1;
+  --warn-bg: #fdf3df;
+  --warn: #8a5a00;
+  --hold-bg: #fbe7e4;
+  --hold: #a3301f;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); }
+h1, h2, h3, p, ul { margin: 0; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+.mast { background: linear-gradient(100deg, var(--navy) 55%, var(--deep)); color: #fff; padding: 32px 24px 28px; }
+.wrap { max-width: 1200px; margin: 0 auto; }
+.eyebrow { font: 500 13px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mint); }
+.mast h1 { font: 700 clamp(30px, 4.4vw, 44px)/1.12 var(--display); margin-top: 8px; text-wrap: balance; }
+.mast p { margin-top: 10px; max-width: 64ch; color: #d6e2ea; }
+.counts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 16px; font: 400 14px/1.4 var(--mono); color: #fff; }
+
+
+.tools { background: var(--surface); border-bottom: 1px solid var(--line); padding: 12px 24px; }
+.tools .wrap { display: grid; gap: 8px; }
+.flabel { font: 500 12px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.result { font: 400 14px/1.4 var(--mono); color: var(--muted); padding-top: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.search { flex: 1 1 240px; min-width: 0; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+.pick { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); max-width: 100%; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--surface); padding: 8px 14px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; font-size: 14px; cursor: pointer; }
+.chip:hover { border-color: var(--teal); }
+.chip[aria-pressed="true"] { background: var(--tint); border-color: var(--teal); color: #07594c; font-weight: 500; }
+
+main { padding: 8px 24px 40px; }
+.panel { padding-top: 18px; }
+.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; border-bottom: 2px solid var(--navy); padding-bottom: 8px; }
+.panel-head .n { font: 500 13px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--teal); }
+.panel-head h2 { font: 700 24px/1.2 var(--display); color: var(--navy); }
+.panel-head p { color: var(--muted); font-size: 15px; }
+.sample-title { font: 500 13px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 18px 0 10px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+
+.card { display: flex; flex-direction: column; gap: 10px; text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; cursor: pointer; transition: border-color .15s, box-shadow .15s; }
+.card:hover { border-color: var(--teal); box-shadow: 0 4px 16px rgba(11,37,69,.09); }
+.brand { font: 500 12px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
+.card h3 { font: 700 20px/1.2 var(--display); color: var(--navy); }
+.tag { font-size: 15px; line-height: 1.4; color: var(--ink); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 14px; margin-top: auto; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; }
+.foot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 10px; }
+.price { font: 600 16px/1.2 var(--mono); color: var(--gold); font-variant-numeric: tabular-nums; }
+.pend { display: inline-block; background: var(--warn-bg); color: var(--warn); border-radius: 5px; padding: 1px 7px; font: 500 13px/1.5 var(--mono); }
+.more { font-size: 14px; color: var(--teal); font-weight: 500; }
+.badge { align-self: flex-start; font: 500 12px/1.3 var(--body); border-radius: 5px; padding: 3px 8px; }
+.badge.ok { background: var(--tint); color: #07594c; }
+.badge.ldt { background: #e9edf3; color: #3a4c63; }
+.badge.hold { background: var(--hold-bg); color: var(--hold); }
+
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin-top: 24px; }
+table { border-collapse: collapse; width: 100%; min-width: 780px; font-size: 15px; }
+th { text-align: left; font: 500 12px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 11px 14px; border-bottom: 1px solid var(--line); }
+td { padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.link { border: 0; background: none; padding: 0; color: var(--navy); font-weight: 600; cursor: pointer; text-align: left; }
+.link:hover { color: var(--teal); text-decoration: underline; }
+
+.empty { padding: 48px 0; text-align: center; color: var(--muted); }
+.empty button { margin-top: 10px; }
+footer { padding: 0 24px 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 10px; }
+footer a { color: var(--teal); }
+
+dialog { border: 0; padding: 0; border-radius: 14px; width: min(760px, calc(100% - 24px)); max-height: calc(100% - 24px); overflow: hidden; color: var(--ink); background: var(--surface); }
+dialog[open] { display: flex; flex-direction: column; }
+dialog::backdrop { background: rgba(8,24,44,.6); }
+.m-head { position: relative; background: linear-gradient(100deg, var(--navy) 55%, var(--deep)); color: #fff; padding: 20px 56px 20px 24px; flex: none; }
+.m-head h2 { font: 700 30px/1.15 var(--display); margin-top: 6px; }
+.m-sub { font: 400 14px/1.45 var(--mono); color: #d6e2ea; margin-top: 6px; }
+.close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: 0; border-radius: 8px; background: rgba(255,255,255,.16); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; }
+.close:hover { background: rgba(255,255,255,.28); }
+.close:focus-visible { outline-color: #fff; }
+.m-tabs { display: flex; flex: none; border-bottom: 1px solid var(--line); padding: 0 24px; gap: 20px; }
+.m-tabs button { border: 0; background: none; padding: 12px 0; cursor: pointer; color: var(--muted); font-weight: 500; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.m-tabs button[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--teal); font-weight: 600; }
+.m-body { overflow-y: auto; padding: 18px 24px 22px; display: grid; gap: 16px; flex: 1 1 auto; min-height: 0; }
+.hold-note { background: var(--hold-bg); color: var(--hold); border-radius: 8px; padding: 10px 12px; font-size: 15px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.stat { background: var(--bg); border-radius: 8px; padding: 9px 12px; font-size: 14px; }
+.stat b { display: block; font: 500 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.lab { font: 500 13px/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+.sec p { max-width: 68ch; }
+.sec ul { padding-left: 20px; display: grid; gap: 4px; margin-top: 4px; }
+.sec ul ul { margin-top: 4px; }
+.lead { font: 700 21px/1.25 var(--display); color: var(--navy); text-wrap: balance; }
+.note { font-size: 15px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; font-style: normal; }
+.note em { font-style: normal; }
+.sec.addons ul { list-style: none; padding: 0; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 0 20px; }
+.sec.addons li { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding: 4px 0; font-size: 15px; font-variant-numeric: tabular-nums; }
+.price small { font: 500 12px/1 var(--mono); }
+.sec.warn { background: var(--warn-bg); border-radius: 8px; padding: 10px 12px; }
+.sec.warn .lab { color: var(--warn); }
+.tagrow { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tagchip { background: #e9edf3; color: #3a4c63; border-radius: 999px; padding: 3px 10px; font-size: 14px; }
+.tagchip.spec { background: var(--tint); color: #07594c; }
+.ask { display: block; width: 100%; text-align: center; background: var(--navy); color: #fff; border: 0; border-radius: 10px; padding: 14px 16px; font-weight: 600; cursor: pointer; text-decoration: none; }
+.ask:hover { background: var(--deep); }
+.askmore { background: var(--bg); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; font-size: 15px; }
+.askmore[hidden] { display: none; }
+.asknote { font-size: 14px; color: var(--muted); text-align: center; }
+
+@media (max-width: 560px) {
+  .mast, .tools, main, footer { padding-left: 16px; padding-right: 16px; }
+  .m-head, .m-body { padding-left: 16px; padding-right: 16px; }
+  .m-head { padding-right: 56px; }
+  .m-tabs { padding: 0 16px; }
+  .tools { position: static; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap">
+    <div class="eyebrow">Portafolio comercial</div>
+    <h1>Oncología de precisión</h1>
+    <p>La información genómica correcta, en el momento en que se toma la decisión. Elige un tipo de cáncer y abre la ficha de cada prueba.</p>
+    <div class="counts" id="counts"></div>
+  </div>
+</header>
+
+<div class="tools">
+  <div class="wrap">
+    <div class="row">
+      <input id="q" class="search" type="search" placeholder="Buscar prueba, gen o biomarcador (EGFR, HRD, BRCA1…)" aria-label="Buscar prueba, gen o biomarcador">
+      <select id="sample" class="pick" aria-label="Filtrar por tipo de muestra"></select>
+      <select id="brand" class="pick" aria-label="Filtrar por marca"></select>
+      <div class="seg" role="group" aria-label="Forma de ver el catálogo">
+        <button type="button" id="v-cards" aria-pressed="true">Tarjetas</button>
+        <button type="button" id="v-table" aria-pressed="false">Tabla</button>
+      </div>
+    </div>
+    <div class="flabel">Tipo de cáncer</div>
+    <div class="chips" id="cancers" role="group" aria-label="Filtrar por tipo de cáncer"></div>
+    <div class="flabel">Tipo de panel</div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por tipo de panel"></div>
+  </div>
+</div>
+
+<main><div class="wrap"><div class="result" id="result" aria-live="polite"></div><div id="list"></div></div></main>
+
+<footer>
+  <div class="wrap">
+    <p>Las pruebas de este portafolio requieren solicitud médica y deben interpretarse por un profesional de la salud junto con la historia clínica del paciente. Sus resultados no garantizan el acceso ni la respuesta a un tratamiento. Las aprobaciones de la FDA mencionadas corresponden a Estados Unidos. Los nombres de productos son marcas de sus respectivos titulares.</p>
+    <p>Datos tomados de las fichas técnicas de cada fabricante. Guardant:
+      <a href="https://www.accessdata.fda.gov/cdrh_docs/pdf25/P250027A.pdf">aprobación FDA P250027</a>,
+      <a href="https://www.guardantcomplete.com/assets/pdf/ONC-US-00552_G360_Liquid_CDx_Spec_Sheet.pdf">ficha Guardant360 Liquid CDx</a>,
+      <a href="https://guardanthealth.co.uk/product/guardant-reveal/">Guardant Reveal</a>,
+      <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11443202/">estudio COSMOS</a>. Tempus:
+      <a href="https://tempus.com/xt-xr">xT y xR</a>,
+      <a href="https://www.tempus.com/oncology/genomic-profiling/xe/">xE</a>,
+      <a href="https://www.tempus.com/oncology/genomic-profiling/xf/">xF y xF+</a>,
+      <a href="https://www.tempus.com/xm-mrd/">xM MRD</a>.</p>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="m-title">
+  <div class="m-head">
+    <div class="eyebrow" id="m-panel"></div>
+    <h2 id="m-title"></h2>
+    <div class="m-sub" id="m-sub"></div>
+    <button type="button" class="close" id="m-close" aria-label="Cerrar ficha">&times;</button>
+  </div>
+  <div class="m-tabs" role="tablist" aria-label="Público de la ficha">
+    <button type="button" role="tab" id="t-pat" aria-controls="m-body">Para el paciente</button>
+    <button type="button" role="tab" id="t-doc" aria-controls="m-body">Para el médico tratante</button>
+  </div>
+  <div class="m-body" id="m-body" role="tabpanel" tabindex="0"></div>
+</dialog>
+
+<script>
+/* Canal para solicitudes de precio o detalle. Escribe el WhatsApp con lada (por ejemplo 5215512345678) o el correo. */
+var CONTACTO = { whatsapp: "", correo: "" };
+var SOLID = ["Pulmón", "Mama", "Colorrectal", "Próstata", "Ovario", "Páncreas", "Gástrico", "Melanoma", "Vías biliares", "Cerebro", "Renal", "Sarcomas", "Otros tumores sólidos"];
+var PANELS = [{"n": 1, "name": "Perfil integral amplio (pancáncer)", "desc": "Un solo estudio para buscar, de forma amplia, lo que puede orientar el tratamiento.", "samples": [{"name": "Sólido (tejido FFPE)", "tests": [{"name": "FoundationOne® CDx", "tagline": "324 genes. Una sola muestra. Respaldo regulatorio en múltiples tipos de tumor.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "324"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Tu tumor tiene información que puede ayudar a tu médico a elegir el mejor camino.", "paras": ["Muchas veces, esta prueba se realiza con la muestra de la biopsia que ya te tomaron, así que puede no ser necesario repetir el procedimiento. El laboratorio busca en esa muestra cambios genéticos que ayuden a tu médico a saber si existe un tratamiento dirigido."], "bullets": ["<strong>Un solo estudio</strong> en lugar de varios análisis por separado.", "<strong>Un plan pensado para ti</strong>, basado en las características de tu propio tumor.", "<strong>Más claridad</strong> para conversar con tu médico sobre las opciones disponibles."], "note": "No todas las personas tendrán un hallazgo que se traduzca en un tratamiento. Tu médico te explicará qué significan tus resultados. En algunos casos puede requerirse una nueva biopsia.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados que requieren perfil genómico integral para selección terapéutica.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "Sustituciones, indels y alteraciones del número de copias en 324 genes, más rearreglos selectos.", "sub": []}, {"t": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Diagnóstico complementario aprobado por la FDA (EE. UU.) con indicaciones en:", "items": [{"t": "<strong>Tumores sólidos (agnóstico):</strong> MSI-High y TMB ≥10 mut/Mb (pembrolizumab); NTRK1/2/3 (entrectinib, larotrectinib); fusiones RET (selpercatinib).", "sub": []}, {"t": "<strong>CPCNP:</strong> EGFR, ALK, ROS1, BRAF V600E, MET exón 14.", "sub": []}, {"t": "<strong>Mama:</strong> ERBB2, PIK3CA, y AKT1/PIK3CA/PTEN (capivasertib + fulvestrant).", "sub": []}, {"t": "<strong>Colorrectal:</strong> KRAS/NRAS (cetuximab, panitumumab).", "sub": []}, {"t": "<strong>Próstata y ovario:</strong> BRCA1/2 y genes HRR.", "sub": []}, {"t": "<strong>Melanoma, colangiocarcinoma</strong> (FGFR2) y <strong>glioma pediátrico de bajo grado</strong> (BRAF).", "sub": []}]}, {"label": "Concordancia frente a métodos de referencia (PPA / NPA)", "text": "EGFR ex19del/L858R 98.1% / 99.4% · KRAS 100% / 100% · ALK 92.9% / 100% · BRAF V600E 99.3% / 99.2% · ERBB2 amplificación 89.4% / 98.4%.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Un resultado negativo no descarta la presencia de una alteración. Los hallazgos fuera de las indicaciones CDx no son prescriptivos para el uso en etiqueta de un fármaco.", "items": []}, {"label": "Complemento FoundationOne RNA", "text": "Detecta fusiones, rearreglos y variantes de empalme en 318 genes por NGS de captura híbrida, a partir de tejido FFPE. Incluye AR-V7, EGFRvIII y omisión del exón 14 de MET. Prueba desarrollada en laboratorio, sin autorización ni aprobación de autoridad regulatoria.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "PD-L1 IHC", "sub": []}, {"t": "MMR IHC", "sub": []}, {"t": "FOLR1 IHC", "sub": []}, {"t": "CLAUDIN18 IHC", "sub": []}, {"t": "MET IHC", "sub": []}, {"t": "FoundationOne RNA", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Foundation Medicine · Roche", "genes": "324", "reg": "CDx aprobado por FDA (EE. UU.)", "regk": "ok", "broad": true, "spec": {"Pulmón": "Aprobación FDA", "Mama": "Aprobación FDA", "Colorrectal": "Aprobación FDA", "Próstata": "Aprobación FDA", "Ovario": "Aprobación FDA", "Melanoma": "Aprobación FDA", "Vías biliares": "Aprobación FDA", "Cerebro": "Aprobación FDA (glioma pediátrico)"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}, {"name": "FoundationOne® Heme", "tagline": "ADN y ARN para leucemias, linfomas, mielomas y sarcomas.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "406 (ADN) + 265 (ARN)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Entender tu diagnóstico con mayor detalle.", "paras": ["Los cánceres de la sangre y los sarcomas son muy diversos. Esta prueba ayuda a tu médico a precisar el tipo exacto de enfermedad, a estimar cómo podría comportarse y a buscar tratamientos dirigidos o estudios clínicos."], "bullets": ["<strong>Mayor precisión</strong> para entender tu diagnóstico.", "<strong>Información para planear</strong>, junto con tu médico, los siguientes pasos.", "<strong>Muestras flexibles</strong>, según tu caso."], "note": "Tu equipo médico interpretará estos resultados junto con el resto de tus estudios.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Neoplasias hematológicas, sarcomas y tumores sólidos en los que importan las fusiones complejas y la subclasificación diagnóstica.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "Región codificante completa de <strong>406 genes</strong> (ADN), con intrones de 31 genes implicados en rearreglos (profundidad mediana ~500X).", "sub": []}, {"t": "<strong>ARN de 265 genes</strong> frecuentemente reordenados, para fusiones conocidas y nuevas.", "sub": []}, {"t": "Sustituciones, indels, CNV y rearreglos, más <strong>TMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Desempeño", "text": "Concordancia PPA 99% / NPA 98% frente a prueba de referencia certificada por CLIA (configuración HiSeq). Precisión de 100% en variantes cortas, fusiones y CNV objetivo. MSI: 100% OPA. TMB: 97.4% OPA.", "items": []}, {"label": "Límite de detección", "text": "Sustituciones 5% VAF · Indels 10% VAF · CNV 30% pureza tumoral · Fusiones 25 lecturas.", "items": []}, {"label": "Utilidad clínica", "text": "Identifica opciones terapéuticas y alteraciones pronósticas y ayuda a subclasificar el diagnóstico. Cada muestra se revisa por un hematopatólogo o patólogo anatómico. El informe es interpretado y firmado por patólogos certificados.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Prueba desarrollada en laboratorio, no autorizada ni aprobada por la FDA.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "PD-L1 IHC", "sub": []}, {"t": "MMR IHC", "sub": []}, {"t": "FOLR1 IHC", "sub": []}, {"t": "CLAUDIN18 IHC", "sub": []}, {"t": "MET IHC", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Foundation Medicine · Roche", "genes": "406 + 265 ARN", "reg": "Desarrollada en laboratorio", "regk": "ldt", "broad": true, "spec": {"Hematológicos": "Indicada", "Sarcomas": "Indicada"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}, {"name": "Tempus xT", "tagline": "648 genes para una lectura profunda del tumor.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "648 (ADN)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Cuanto mejor conocemos tu tumor, más opciones se pueden explorar.", "paras": ["Tempus xT analiza una gran cantidad de genes a partir de la muestra de tu tumor. Reúne en un solo estudio información que, de otro modo, podría requerir varias pruebas separadas, y ayuda a tu médico a buscar tratamientos dirigidos, inmunoterapia o estudios clínicos que puedan ser adecuados para ti."], "bullets": ["<strong>Menos estudios fragmentados</strong>, más información en un solo resultado.", "<strong>Una búsqueda amplia</strong> de cambios genéticos relacionados con el cáncer.", "<strong>Decisiones personalizadas</strong>, tomadas junto con tu médico."], "note": "El resultado orienta a tu médico, pero no garantiza que exista un tratamiento específico para tu caso.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados o metastásicos (pulmón, colon, mama, próstata y otros) en los que se requiere perfil somático amplio para seleccionar terapia dirigida o evaluar elegibilidad a inmunoterapia.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV, indels, CNV y rearreglos en 648 genes.", "sub": []}, {"t": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Identifica en un solo estudio alteraciones accionables (EGFR, KRAS, BRAF, ALK y otras) y biomarcadores de inmunoterapia, lo que agiliza la decisión terapéutica y la búsqueda de ensayos clínicos.", "items": []}, {"label": "Plataforma", "text": "Secuenciación Illumina.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "MMR", "sub": []}, {"t": "PD-L1", "sub": []}, {"t": "HER2 IHC + FISH", "sub": []}, {"t": "FOLR1 IHC FDA", "sub": []}, {"t": "Immune Profile Score (IPS)", "sub": []}, {"t": "CLDN18", "sub": []}, {"t": "HRD", "sub": []}, {"t": "1p19q FISH", "sub": []}, {"t": "MGMT", "sub": []}, {"t": "c-MET", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "648", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}, {"name": "Tempus xR", "tagline": "El transcriptoma completo para encontrar fusiones que el ADN no siempre muestra.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "Transcriptoma completo; fusiones en más de 100 genes objetivo"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "A veces, la respuesta está en el ARN de tu tumor.", "paras": ["Algunos tumores crecen porque dos genes se unieron por error. Estas uniones se detectan mejor analizando el ARN, una molécula que refleja lo que las células están haciendo. Esta prueba lo estudia a partir de la muestra de tu tumor y ayuda a tu médico a saber si existe una opción dirigida a ese cambio."], "bullets": ["<strong>Una búsqueda especializada</strong> de alteraciones difíciles de encontrar.", "<strong>Usa la muestra de tejido</strong> de tu biopsia o cirugía.", "<strong>Puede sumar información</strong> a otros estudios que ya tengas."], "note": "No siempre se encuentra una fusión. Tu médico te explicará qué significa tu resultado.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos con perfil de ADN previo sin conductor identificado, o con alta sospecha de fusiones. También se puede solicitar sola o junto con xT.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "Fusiones y rearreglos clínicamente relevantes en más de 100 genes objetivo, entre ellos ALK, RET, ROS1, NTRK1/2/3, FGFR1/2/3, NRG1 y BRAF.", "sub": []}, {"t": "Splicing alterado: omisión del exón 14 de MET y EGFRvIII.", "sub": []}]}, {"label": "Desempeño (fabricante)", "text": "Sensibilidad de 97% en rearreglos y fusiones, 100% en MET exón 14 y 95.5% en EGFRvIII.", "items": []}, {"label": "Evidencia", "text": "En un análisis pan-cáncer (n=2,118) con 1,106 fusiones accionables, 19% se identificó solo por ARN, 5% solo por ADN y 76% por ambos métodos.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "Tumor de origen (TO)", "sub": []}, {"t": "HRD", "sub": []}, {"t": "1p19q FISH", "sub": []}, {"t": "MGMT", "sub": []}, {"t": "c-MET", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "Transcriptoma completo", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}, {"name": "Tempus xT + xR", "tagline": "ADN y ARN en una sola solicitud.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "648 (ADN) + transcriptoma completo (ARN)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Dos miradas a tu tumor en un solo estudio.", "paras": ["Esta prueba analiza tanto el ADN como el ARN de tu tumor. El ADN muestra qué cambios existen y el ARN ayuda a descubrir alteraciones que podrían pasar inadvertidas. Juntos dan a tu médico una imagen más completa para valorar tus opciones de tratamiento."], "bullets": ["<strong>Un solo estudio</strong> con dos tipos de análisis.", "<strong>Más posibilidades de encontrar</strong> información útil para tu caso.", "<strong>Decisiones personalizadas</strong>, tomadas junto con tu médico."], "note": "El resultado orienta a tu médico, pero no garantiza que exista un tratamiento específico para tu caso.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados o metastásicos en los que se busca maximizar la detección de alteraciones accionables, incluidas las fusiones.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV, indels, CNV y rearreglos en 648 genes.", "sub": []}, {"t": "Fusiones por ARN en más de 100 genes objetivo; MET exón 14 y EGFRvIII.", "sub": []}, {"t": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Según Tempus, 43.4% de los pacientes se emparejó con una terapia dirigida al combinar ADN, ARN y biomarcadores de inmunoterapia. Entre los pacientes con fusiones, incorporar ARN identificó 29% más con una fusión accionable única que el ADN solo.", "items": []}, {"label": "Plataforma", "text": "Secuenciación Illumina.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "MMR", "sub": []}, {"t": "PD-L1", "sub": []}, {"t": "HER2 IHC + FISH", "sub": []}, {"t": "FOLR1 IHC FDA", "sub": []}, {"t": "Immune Profile Score (IPS)", "sub": []}, {"t": "CLDN18", "sub": []}, {"t": "HRD", "sub": []}, {"t": "1p19q FISH", "sub": []}, {"t": "MGMT", "sub": []}, {"t": "c-MET", "sub": []}, {"t": "Tumor de origen (TO)", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "648 + ARN", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}, {"name": "Tempus xT + xR Normal Match", "tagline": "ADN, ARN y comparación tumor-normal en una sola solicitud.", "stats": [["Muestra", "Sólido (tejido FFPE) + sangre periférica en tubo EDTA (lila)"], ["Genes", "648 (ADN) + fusiones en más de 100 genes (ARN)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Comparar tu tumor con tu sangre da resultados más claros.", "paras": ["Esta prueba estudia tu tumor y lo compara con una muestra de tu sangre. Así distingue mejor los cambios propios del tumor de aquellos con los que naciste. Además, analiza el ARN, otra molécula que puede revelar alteraciones que el ADN no siempre muestra."], "bullets": ["<strong>Resultados más precisos</strong> al comparar tumor y sangre.", "<strong>Mayor profundidad</strong>, porque estudia ADN y ARN.", "<strong>Más elementos</strong> para que tu médico elija un tratamiento personalizado."], "note": "Si surge información sobre genes heredados, tu médico puede recomendarte asesoría genética.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos en los que importa la precisión somática, o con sospecha de fusiones accionables no captadas por ADN.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV, indels, CNV y rearreglos en 648 genes.", "sub": []}, {"t": "<strong>Fusiones por ARN</strong> en más de 100 genes.", "sub": []}, {"t": "<strong>Normal Match:</strong> separa variantes somáticas de hallazgos germinales.", "sub": []}, {"t": "Firmas genómicas: <strong>TMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Utilidad clínica", "text": "El análisis conjunto reduce la ambigüedad en la interpretación somática y amplía la detección de fusiones en una sola solicitud.", "items": []}, {"label": "Plataforma", "text": "Secuenciación Illumina.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "MMR", "sub": []}, {"t": "PD-L1", "sub": []}, {"t": "HER2 IHC + FISH", "sub": []}, {"t": "FOLR1 IHC FDA", "sub": []}, {"t": "Immune Profile Score (IPS)", "sub": []}, {"t": "CLDN18", "sub": []}, {"t": "HRD", "sub": []}, {"t": "1p19q FISH", "sub": []}, {"t": "MGMT", "sub": []}, {"t": "c-MET", "sub": []}, {"t": "Tumor de origen (TO)", "sub": []}]}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "648 + ARN", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE) + sangre periférica en tubo EDTA (lila)"}, {"name": "Tempus xE", "tagline": "Más de 19,000 genes: el exoma completo del tumor.", "stats": [["Muestra", "Sólido (tejido FFPE) + muestra normal pareada (sangre o saliva)"], ["Genes", "Más de 19,000 (exoma completo)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "La búsqueda más amplia, para los casos que lo necesitan.", "paras": ["Algunos casos poco comunes o complejos requieren mirar mucho más allá de los genes habituales. Esta prueba estudia prácticamente todos los genes del tumor y los compara con una muestra normal de tu cuerpo, lo que ayuda a tu médico a buscar pistas que un panel más pequeño podría no incluir."], "bullets": ["<strong>Una búsqueda muy amplia</strong> de cambios en tu tumor.", "<strong>Comparación con tu muestra normal</strong> para resultados más confiables.", "<strong>Útil en casos complejos</strong>, según lo valore tu médico."], "note": "Esta prueba no sustituye a un estudio de cáncer hereditario. Si aparece un posible hallazgo heredado, tu médico puede recomendarte asesoría genética y una prueba confirmatoria.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores raros o complejos en los que un panel dirigido resulta insuficiente. Requiere contenido tumoral de al menos 40% tras macrodisección.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "Exoma de más de 19,000 genes, con cobertura de 300x en 648 genes reforzados y 250x en el resto.", "sub": []}, {"t": "SNV, indels, pérdidas y ganancias del número de copias.", "sub": []}, {"t": "<strong>TMB</strong> y posibles hallazgos germinales en un conjunto limitado de 110 genes.", "sub": []}]}, {"label": "Desempeño (fabricante, sensibilidad / especificidad)", "text": "SNV en regiones reforzadas 97.9% / 99.9% (5% VAF) · Regiones no reforzadas 93.6% / 99.9% (10% VAF) · Indels reforzados 92.6% / 99.9% · Ganancias de copias: sensibilidad de 85.7%.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "xE no es un panel germinal validado. Los posibles hallazgos germinales no deben usarse como determinación diagnóstica de riesgo hereditario.", "items": []}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "Más de 19,000", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE) + muestra normal pareada (sangre o saliva)"}, {"name": "ONCO Idx Tissue", "tagline": "517 genes, ADN y ARN, para muestras con poco material.", "stats": [["Muestra", "Sólido (tejido FFPE)"], ["Genes", "517 (ADN y ARN)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Incluso una muestra pequeña puede dar información valiosa.", "paras": ["A veces la biopsia aporta muy poco material. Esta prueba está diseñada para trabajar con cantidades pequeñas y estudiar muchos genes a la vez, lo que puede ayudar a que tu médico obtenga información de tu tumor sin necesidad de repetir procedimientos."], "bullets": ["<strong>Aprovecha al máximo</strong> la muestra disponible.", "<strong>Analiza muchos genes</strong> en un solo estudio.", "<strong>Da a tu médico más elementos</strong> para valorar tus opciones."], "note": "Tu médico te explicará el alcance y las limitaciones de esta prueba.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos con muestra limitada en los que se busca perfil amplio de ADN y ARN.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV, indels, CNV (incluyendo grandes rearreglos en BRCA1/2) y fusiones en 517 genes.", "sub": []}, {"t": "Más de 1,300 isoformas de fusión en 49 genes conductores.", "sub": []}, {"t": "<strong>HRD:</strong> 47 genes HRR más métrica de inestabilidad genómica (GIM).", "sub": []}, {"t": "<strong>TMB:</strong> más de 1 Mb de cobertura exónica. <strong>MSI:</strong> 76 marcadores.", "sub": []}]}, {"label": "Desempeño analítico reportado (sensibilidad / especificidad)", "text": "SNV 99.6% / 97.6% · Indels 99.5% / 98.1% · CNV ganancia 97.6% / 99.9% · Fusiones 100% / 97.5%.", "items": []}, {"label": "Ventaja técnica", "text": "Requiere solo 20 ng de ADN o ARN, con una tasa de éxito cercana a 94% en un estudio multicéntrico europeo (193 muestras pan-cáncer).", "items": []}, {"label": "Plataforma", "text": "Oncomine Comprehensive Assay Plus (Ion Torrent).", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}], "sample": "Sólido (tejido FFPE)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "NOMAD", "genes": "517", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sólido (tejido FFPE)"}]}, {"name": "Líquido (sangre)", "tests": [{"name": "Guardant360® CDx", "tagline": "La biopsia líquida con aprobación FDA, enfocada en lo esencial.", "stats": [["Muestra", "Sangre periférica en tubos Streck"], ["Genes", "55 reportados"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Con una toma de sangre, información para tu tratamiento.", "paras": ["Los tumores liberan fragmentos de su ADN a la sangre. Esta prueba los analiza para buscar cambios específicos que pueden ayudar a tu médico a elegir un tratamiento dirigido, sin necesidad de una biopsia de tejido."], "bullets": ["<strong>Sencilla:</strong> una toma de sangre.", "<strong>Enfocada</strong> en los cambios con mayor relevancia para el tratamiento.", "<strong>Útil</strong> cuando no hay tejido disponible."], "note": "Si la prueba no encuentra una alteración, no significa que el tumor no la tenga. Tu médico podría recomendar un estudio de tejido.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados cuando se busca un perfil dirigido en plasma para selección terapéutica.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV e indels en <strong>55 genes</strong> (diseño de 74).", "sub": []}, {"t": "Amplificaciones: ERBB2, MET.", "sub": []}, {"t": "Fusiones: ALK, NTRK1, RET, ROS1.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Diagnóstico complementario aprobado por la FDA (EE. UU.) desde 2020. Sus siete indicaciones incluyen CPCNP (EGFR, KRAS G12C, ERBB2), mama (ESR1) y colorrectal (BRAF V600E).", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Un resultado negativo en plasma no garantiza que el tumor sea negativo; se recomienda reflejar a tejido si es factible.", "items": []}], "sample": "Líquido (sangre)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Guardant Health", "genes": "55", "reg": "CDx aprobado por FDA (EE. UU.)", "regk": "ok", "broad": true, "spec": {"Pulmón": "Aprobación FDA", "Mama": "Aprobación FDA", "Colorrectal": "Aprobación FDA"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica en tubos Streck"}, {"name": "Guardant360® CDx Expanded", "tagline": "741 genes y epigenómica en una sola toma de sangre.", "stats": [["Versión", "Guardant360® Liquid CDx"], ["Muestra", "2 tubos Streck de 10 mL"], ["Genes", "741 (SNV e indels)"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Una toma de sangre puede dar respuestas importantes.", "paras": ["Los tumores liberan pequeños fragmentos de su ADN a la sangre. Esta prueba los busca y los analiza con una toma de sangre sencilla, sin cirugía y sin necesidad de una nueva biopsia de tejido, y entrega información útil para que tu médico valore tu tratamiento."], "bullets": ["<strong>Sencilla:</strong> una toma de sangre, como la de cualquier análisis.", "<strong>Rápida:</strong> resultados pensados para no retrasar decisiones.", "<strong>Útil cuando no hay biopsia disponible</strong> o cuando tu enfermedad ha cambiado."], "note": "Si la prueba no encuentra una alteración, no significa que el tumor no la tenga. Tu médico podría recomendar un estudio de tejido.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados, al diagnóstico o en progresión, en especial con tejido insuficiente, biopsia de alto riesgo o necesidad de un resultado rápido.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV e indels en <strong>741 genes</strong>. Amplificaciones: ERBB2, MET. Pérdida: BRCA1.", "sub": []}, {"t": "Rearreglos en 9 genes: ALK, RET, ROS1, NRG1, NTRK1/2/3, FGFR2, FGFR3.", "sub": []}, {"t": "Reporte profesional (746 genes, fuera de la aprobación FDA): MSI-High, bTMB, HBV/EBV, farmacogenómica y tipificación HLA.", "sub": []}, {"t": "Integra señales genómicas y epigenómicas de una sola muestra (Smart Platform).", "sub": []}]}, {"label": "Utilidad clínica", "text": "Aprobada por la FDA (EE. UU.) en mayo de 2026. Guardant Health la describe como el panel de biopsia líquida aprobado por la FDA de mayor tamaño. Indicaciones de diagnóstico complementario:", "items": [{"t": "<strong>Mama:</strong> ESR1 (elacestrant; imlunestrant).", "sub": []}, {"t": "<strong>Colorrectal:</strong> BRAF V600E (encorafenib + cetuximab).", "sub": []}, {"t": "<strong>CPCNP:</strong> EGFR ex19del/L858R/T790M (osimertinib); EGFR inserciones ex20 (amivantamab); KRAS G12C (sotorasib); ERBB2/HER2 activadoras (trastuzumab deruxtecán).", "sub": []}]}, {"label": "Sensibilidad", "text": "Según el fabricante, reporta variantes desde 0.001% MAF y aumenta varias veces la sensibilidad para ctDNA frente al Guardant360 CDx anterior.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Un resultado negativo en plasma no garantiza que el tumor sea negativo; se recomienda reflejar a tejido si es factible. Las alteraciones pueden ser somáticas, germinales o de hematopoyesis clonal (CHIP). La liberación de ctDNA puede ser menor en tumores primarios del SNC.", "items": []}], "sample": "Líquido (sangre)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Guardant Health", "genes": "741", "reg": "CDx aprobado por FDA (EE. UU.)", "regk": "ok", "broad": true, "spec": {"Pulmón": "Aprobación FDA", "Mama": "Aprobación FDA", "Colorrectal": "Aprobación FDA"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "2 tubos Streck de 10 mL"}, {"name": "FoundationOne® Liquid CDx", "tagline": "La profundidad de Foundation Medicine, ahora desde la sangre.", "stats": [["Muestra", "2 tubos de sangre periférica (kit FoundationOne Liquid CDx)"], ["Genes", "324"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Cuando una biopsia no es posible, tu sangre puede ayudar.", "paras": ["Si no hay suficiente tejido o una nueva biopsia es complicada, esta prueba analiza el ADN tumoral presente en la sangre. Con dos tubos de sangre, tu médico puede obtener información sobre las características de tu tumor y sobre las opciones que podrían convenirte."], "bullets": ["<strong>Sin cirugía:</strong> se realiza con una toma de sangre.", "<strong>Información amplia</strong> en un solo estudio.", "<strong>Una opción valiosa</strong> cuando el tejido no está disponible."], "note": "Un resultado negativo no significa que el tumor no tenga cambios genéticos. Tu médico podría indicar un estudio adicional.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados, cuando el tejido es insuficiente o inaccesible, o cuando se busca una evaluación en sangre.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "Interroga 324 genes. Aprobada para reportar sustituciones e indels en 311 genes, rearreglos en 8 y alteraciones del número de copias en 3.", "sub": []}, {"t": "Firmas genómicas: <strong>bTMB</strong> y <strong>MSI</strong>.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Diagnóstico complementario aprobado por la FDA (EE. UU.):", "items": [{"t": "<strong>Mama:</strong> PIK3CA (alpelisib; inavolisib + palbociclib + fulvestrant).", "sub": []}, {"t": "<strong>Colorrectal:</strong> BRAF V600E (encorafenib + cetuximab).", "sub": []}, {"t": "<strong>CPCNP:</strong> EGFR, ALK, ROS1, BRAF V600E, MET exón 14.", "sub": []}, {"t": "<strong>Próstata:</strong> ATM, BRCA1/2 (olaparib y combinaciones; rucaparib; niraparib + abiraterona).", "sub": []}, {"t": "<strong>Agnóstico:</strong> NTRK1/2/3 (entrectinib).", "sub": []}]}, {"label": "Límite de detección (mediana)", "text": "Variantes cortas 0.40% VAF (75 genes de sensibilidad aumentada), 0.82% VAF (resto) · Rearreglos 0.37% / 0.90% VAF · Amplificaciones 21.7% fracción tumoral.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Los pacientes negativos para las mutaciones de la indicación deben reflejarse a tejido, si es factible. Para entrectinib (NTRK, ROS1) y tepotinib, el plasma solo es apropiado cuando no se dispone de tejido.", "items": []}], "sample": "Líquido (sangre)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Foundation Medicine · Roche", "genes": "324", "reg": "CDx aprobado por FDA (EE. UU.)", "regk": "ok", "broad": true, "spec": {"Pulmón": "Aprobación FDA", "Mama": "Aprobación FDA", "Colorrectal": "Aprobación FDA", "Próstata": "Aprobación FDA"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "2 tubos de sangre periférica (kit FoundationOne Liquid CDx)"}, {"name": "Tempus xF", "tagline": "105 genes en sangre, centrados en lo accionable.", "stats": [["Muestra", "2 tubos Streck de 8.5 mL"], ["Genes", "105"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Una toma de sangre para entender qué está pasando.", "paras": ["Cuando no hay suficiente tejido o la enfermedad cambia, esta prueba busca en tu sangre los cambios genéticos más relevantes del tumor. Así tu médico puede valorar si un tratamiento dirigido podría convenirte."], "bullets": ["<strong>Sin procedimientos invasivos:</strong> solo una toma de sangre.", "<strong>Enfocada</strong> en cambios relacionados con el tratamiento.", "<strong>Una alternativa</strong> cuando no es posible estudiar tejido."], "note": "Tu médico interpretará el resultado junto con el resto de tu información clínica.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados con tejido insuficiente o en evaluación de mecanismos de resistencia.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV e indels en 105 genes, con ganancias de copias en 6 y rearreglos en 7.", "sub": []}, {"t": "Mutaciones oncogénicas y de resistencia.", "sub": []}, {"t": "Estado <strong>MSI-High</strong> y <strong>bTMB</strong> (este último solo en el laboratorio de Chicago).", "sub": []}]}, {"label": "Utilidad clínica", "text": "En un análisis pan-cáncer metastásico, 9% de los pacientes con variantes accionables tuvo alteraciones únicas en biopsia líquida no detectadas en tejido, según Tempus.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "No está indicada para neoplasias hematológicas.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "RightMed® Comprehensive (farmacogenómica)", "sub": []}, {"t": "DPYD + UGT1A1", "sub": []}]}], "sample": "Líquido (sangre)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "105", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "2 tubos Streck de 8.5 mL"}, {"name": "Tempus xF+", "tagline": "523 genes en sangre para detectar lo accionable y lo que genera resistencia.", "stats": [["Muestra", "Sangre periférica en tubo Streck Cell-Free DNA BCT®"], ["Genes", "523"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Si tu enfermedad cambia, tu tratamiento también puede cambiar.", "paras": ["Con el tiempo, un tumor puede transformarse y dejar de responder a un medicamento. Con una toma de sangre, esta prueba ayuda a tu médico a entender qué está ocurriendo y a valorar si conviene explorar otra opción."], "bullets": ["<strong>Sin procedimientos invasivos:</strong> solo una toma de sangre.", "<strong>Ayuda a entender</strong> por qué un tratamiento podría haber dejado de funcionar.", "<strong>Una alternativa</strong> cuando no es posible estudiar tejido."], "note": "Tu médico interpretará el resultado junto con el resto de tu información clínica.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Tumores sólidos avanzados, con especial valor en la progresión a terapia dirigida o cuando el tejido no es viable.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV, indels, CNV y rearreglos en 523 genes basados en ctDNA.", "sub": []}, {"t": "Variantes oncogénicas y <strong>de resistencia</strong>.", "sub": []}, {"t": "Firmas genómicas: <strong>bTMB</strong> y <strong>MSI</strong>.", "sub": []}, {"t": "Identifica variantes potencialmente asociadas con <strong>hematopoyesis clonal de potencial indeterminado (CHIP)</strong>, lo que apoya una interpretación más precisa.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Permite evaluar mecanismos de resistencia y opciones de siguiente línea sin una nueva biopsia de tejido.", "items": []}, {"label": "Plataforma", "text": "Secuenciación Illumina.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "Complementos de la prueba que se pueden añadir", "text": "", "items": [{"t": "RightMed® Comprehensive (farmacogenómica)", "sub": []}, {"t": "DPYD + UGT1A1", "sub": []}]}], "sample": "Líquido (sangre)", "panel": 1, "panelName": "Perfil integral amplio (pancáncer)", "brand": "Tempus", "genes": "523", "reg": null, "regk": null, "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica en tubo Streck Cell-Free DNA BCT®"}]}]}, {"n": 2, "name": "Enfermedad Mínima Residual (MRD)", "desc": "Ver lo que todavía no aparece en una imagen.", "samples": [{"name": "Líquido (sangre)", "tests": [{"name": "Guardant Reveal™", "tagline": "Seguimiento de la enfermedad desde la sangre, sin necesidad de tejido.", "stats": [["Muestra", "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"], ["Tecnología", "más de 20,000 señales epigenómicas"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Después del tratamiento, más información y menos incertidumbre.", "paras": ["Terminar una cirugía o un tratamiento trae alivio y también preguntas. Con una toma de sangre, esta prueba busca señales muy pequeñas del tumor, y no necesita una muestra de tu biopsia. Tu médico puede usarla, junto con tus demás estudios, para decidir cómo darte seguimiento y si conviene ajustar tu plan."], "bullets": ["<strong>Sencilla:</strong> solo una toma de sangre.", "<strong>Sin depender de tu biopsia</strong> original.", "<strong>Seguimiento en el tiempo</strong>, para actuar con información oportuna."], "note": "Un resultado negativo no descarta por completo la enfermedad, y un resultado positivo debe valorarse con tu médico. Esta prueba complementa tus revisiones habituales, no las reemplaza.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Enfermedad residual molecular (MRD) tras cirugía y vigilancia de recurrencia en colorrectal, mama (carcinoma invasivo e inflamatorio) y CPCNP. Monitoreo de respuesta a terapia en tumores sólidos avanzados.", "items": []}, {"label": "Tecnología", "text": "Ensayo sin tejido basado en metilación, con más de 20,000 regiones epigenómicas. Reporta fracción tumoral para cuantificar la carga de enfermedad. Límite de detección de <strong>0.005%</strong> en colorrectal (MRD).", "items": []}, {"label": "Evidencia", "text": "", "items": [{"t": "<strong>COSMOS</strong> (colorrectal resecado, 342 pacientes, 1,977 muestras, <em>Clin Cancer Res</em> 2024):", "sub": ["Sensibilidad longitudinal: <strong>81%</strong> en colon estadio II o mayor y <strong>60%</strong> en recto.", "Especificidad: <strong>98.2%</strong>.", "Anticipación mediana a la recurrencia: <strong>5.3 meses</strong> (máximo 28.7).", "VPN superior a 91% para recurrencia a un año.", "100% de pacientes evaluables sin necesidad de tejido."]}, {"t": "<strong>Mama:</strong> especificidad de 100% y anticipación mediana de 7.9 meses.", "sub": []}, {"t": "<strong>Monitoreo de quimioterapia (pan-cáncer):</strong> el aumento de la señal identificó progresión hasta 18 meses antes que las medidas clínicas estándar, con una anticipación mediana de 2.3 meses.", "sub": []}]}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Prueba desarrollada en laboratorio, no autorizada ni aprobada por la FDA. El desempeño varía según el tipo de tumor, el estadio y el momento de la toma.", "items": []}], "sample": "Líquido (sangre)", "panel": 2, "panelName": "Enfermedad Mínima Residual (MRD)", "brand": "Guardant Health", "genes": "Más de 20,000 señales", "reg": "Desarrollada en laboratorio", "regk": "ldt", "broad": true, "spec": {"Colorrectal": "MRD y vigilancia", "Mama": "MRD y vigilancia", "Pulmón": "MRD y vigilancia"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"}, {"name": "Tempus xM MRD", "tagline": "Detección de enfermedad residual en colon y recto, sin necesidad de tejido.", "stats": [["Muestra", "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"], ["Tecnología", "Metilación + variantes genómicas"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Después de tu cirugía, un dato más para decidir.", "paras": ["Tras operar un cáncer de colon o recto, pueden quedar señales mínimas de la enfermedad. Con una toma de sangre y sin necesitar una muestra de tu tumor, esta prueba las busca para ayudar a tu médico a planear tu tratamiento y tu seguimiento."], "bullets": ["<strong>Sencilla:</strong> una toma de sangre.", "<strong>No requiere</strong> la muestra de tu tumor.", "<strong>Ayuda a planear</strong> los siguientes pasos con tu médico."], "note": "Un resultado negativo no descarta por completo la enfermedad. Esta prueba complementa tus revisiones habituales, no las reemplaza.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Cáncer colorrectal estadio II o III tras cirugía con intención curativa.", "items": []}, {"label": "Tecnología", "text": "Ensayo sin tejido (<em>tumor-naïve</em>) que integra metilación y variantes genómicas para emitir un resultado binario: MRD positivo o negativo.", "items": []}, {"label": "Evidencia", "text": "Subanálisis de GALAXY / CIRCULATE-Japan (<em>Clin Cancer Res</em>, 80 participantes):", "items": [{"t": "En el punto de referencia: sensibilidad de <strong>61.1%</strong> y especificidad de <strong>87.9%</strong>.", "sub": []}, {"t": "Longitudinal (74 evaluables): sensibilidad de <strong>83.3%</strong> y especificidad de <strong>89.5%</strong>.", "sub": []}]}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Validada analíticamente para cáncer colorrectal estadio II y III. Un resultado negativo no excluye recurrencia.", "items": []}], "sample": "Líquido (sangre)", "panel": 2, "panelName": "Enfermedad Mínima Residual (MRD)", "brand": "Tempus", "genes": "Metilación + variantes", "reg": null, "regk": null, "broad": false, "spec": {"Colorrectal": "Validada en estadios II y III"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica (tubos y volumen: <span class=\"pend\">por confirmar</span>)"}, {"name": "FoundationOne® Monitor", "tagline": "Medir la carga tumoral a lo largo del tratamiento.", "stats": [["Muestra", "Sangre periférica (tubo: <span class=\"pend\">por confirmar</span>)"], ["Genes", "324"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Una forma adicional de saber cómo vas.", "paras": ["Esta prueba mide, con una toma de sangre, cuánto ADN del tumor circula en tu cuerpo. Al repetirla en distintos momentos, tu médico obtiene un dato más para valorar cómo evoluciona tu enfermedad y si el tratamiento está funcionando como se espera."], "bullets": ["<strong>Una simple toma de sangre</strong>, repetible a lo largo del tiempo.", "<strong>Un dato adicional</strong> para complementar tus estudios.", "<strong>Mejor conversación</strong> con tu médico sobre tu avance."], "note": "Un resultado negativo no significa con certeza que no haya cáncer, y en algunos tumores la prueba puede tener menor sensibilidad.", "extra": "", "doctor": [{"label": "Escenario clínico", "text": "Seguimiento longitudinal en pacientes con cáncer ya diagnosticado.", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "<strong>Fracción tumoral de ctDNA</strong> como biomarcador de carga tumoral.", "sub": []}, {"t": "Sustituciones e indels en 311 genes, alteraciones del número de copias en 310 y rearreglos en 324.", "sub": []}]}, {"label": "Utilidad clínica", "text": "Además de la tendencia cuantitativa de la fracción tumoral, reporta alteraciones genómicas en la misma muestra, lo que aporta información sobre cambios moleculares a lo largo del tratamiento.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}, {"label": "A considerar", "text": "Prueba desarrollada en laboratorio, sin autorización ni aprobación de autoridad regulatoria. Sensibilidad limitada en cánceres con baja liberación de ctDNA. Un resultado negativo no indica definitivamente la ausencia de cáncer.", "items": []}], "sample": "Líquido (sangre)", "panel": 2, "panelName": "Enfermedad Mínima Residual (MRD)", "brand": "Foundation Medicine · Roche", "genes": "324", "reg": "Desarrollada en laboratorio", "regk": "ldt", "broad": true, "spec": {}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica (tubo: <span class=\"pend\">por confirmar</span>)"}]}]}, {"n": 3, "name": "Perfil Hereditario", "desc": "Conocer el riesgo es poder actuar a tiempo, por ti y por tu familia.", "samples": [{"name": "Líquido (sangre)", "tests": [{"name": "Invitae Multi-Cancer Panel", "tagline": "71 genes para responder una pregunta familiar.", "stats": [["Muestra", "Sangre periférica en tubo EDTA (lila)"], ["Genes", "71"], ["Entrega", "21 días hábiles tras el envío al laboratorio"]], "headline": "Saber puede ayudarte a cuidar de ti y de quienes más quieres.", "paras": ["Algunos cánceres se presentan con más frecuencia en ciertas familias. Con una muestra de sangre, esta prueba busca cambios genéticos heredados que aumentan el riesgo de desarrollar ciertos tipos de cáncer. Con esa información, tu médico puede proponer un plan de vigilancia a tu medida y orientar a tus familiares."], "bullets": ["<strong>Prevención y detección temprana</strong> con un plan personalizado.", "<strong>Información valiosa para tu familia</strong>, que podría beneficiarse de estudiarse.", "<strong>Una decisión acompañada:</strong> te recomendamos asesoría genética antes y después de la prueba."], "note": "Tener una variante no significa que desarrollarás cáncer, y no encontrarla no elimina el riesgo por completo.", "extra": "<strong>¿Podría ser para ti?</strong> Si tuviste cáncer a una edad temprana, varios tipos de cáncer, cáncer en ambos órganos de un par (por ejemplo, ambos senos), o si varios familiares cercanos tuvieron el mismo tipo de cáncer, coméntalo con tu médico.", "doctor": [{"label": "Escenario clínico", "text": "Pacientes con historia personal o familiar de cáncer en múltiples sistemas, o con datos sugestivos: diagnóstico a edad inusualmente temprana, tumores primarios múltiples, bilateralidad en órganos pares, agregación familiar o fenotipos atípicos (por ejemplo, cáncer de mama en hombres).", "items": []}, {"label": "Biomarcadores", "text": "", "items": [{"t": "SNV e indels en <strong>71 genes</strong> de predisposición a cánceres de inicio en la edad adulta: mama, ginecológicos, endocrinos, piel y sistema nervioso, entre otros.", "sub": []}, {"t": "Incluye BRCA1/2, genes de Lynch (MLH1, MSH2, MSH6, PMS2, EPCAM), APC, MUTYH, TP53, PTEN, RET, VHL y CDH1.", "sub": []}]}, {"label": "Sensibilidad clínica (proporción de casos atribuida al gen)", "text": "HBOC, BRCA1/2: 60%-85% · Lynch: MLH1 42%, MSH2 33%, MSH6 18% · MEN2, RET: más de 95% · NF1: más de 90% · Poliposis adenomatosa: APC 60%-85%.", "items": []}, {"label": "Utilidad clínica", "text": "Ayuda a confirmar el diagnóstico clínico, orienta pronóstico y vigilancia, favorece la detección temprana, informa el asesoramiento genético y la planificación familiar, y puede apoyar la inclusión en ensayos clínicos. La evaluación amplia resuelve de manera eficiente un fenotipo genéticamente heterogéneo.", "items": []}, {"label": "Plataforma", "text": "Secuenciación Illumina.", "items": []}, {"label": "TAT", "text": "21 días hábiles tras el envío al laboratorio.", "items": []}], "sample": "Líquido (sangre)", "panel": 3, "panelName": "Perfil Hereditario", "brand": "Invitae", "genes": "71", "reg": null, "regk": null, "broad": false, "spec": {"Mama": "Riesgo hereditario", "Ovario": "Riesgo hereditario", "Colorrectal": "Riesgo hereditario", "Próstata": "Riesgo hereditario", "Páncreas": "Riesgo hereditario", "Gástrico": "Riesgo hereditario", "Melanoma": "Riesgo hereditario", "Pulmón": "Riesgo hereditario", "Renal": "Riesgo hereditario", "Cerebro": "Riesgo hereditario", "Sarcomas": "Riesgo hereditario", "Otros tumores sólidos": "Riesgo hereditario"}, "tat": "21 días hábiles tras el envío al laboratorio", "muestra": "Sangre periférica en tubo EDTA (lila)"}]}]}];
+
+var ALL = [];
+PANELS.forEach(function (p) { p.samples.forEach(function (s) { s.tests.forEach(function (t) { ALL.push(t); }); }); });
+function $(id) { return document.getElementById(id); }
+var state = { q: "", panel: 0, cancer: "", sample: "", brand: "", view: "cards", tab: "pat", cur: null };
+
+function uniq(a) { return a.filter(function (v, i) { return a.indexOf(v) === i; }); }
+function plain(html) { var d = document.createElement("div"); d.innerHTML = html; return d.textContent; }
+function cancersOf(t) { return Object.keys(t.spec); }
+function fitsCancer(t, c) { if (!c) return true; if (t.spec[c]) return true; return t.broad && SOLID.indexOf(c) > -1; }
+function cancerShort(t) {
+  var parts = [];
+  if (t.broad) parts.push("Todos los tumores sólidos");
+  cancersOf(t).forEach(function (c) { if (!t.broad || SOLID.indexOf(c) === -1) parts.push(c); });
+  return parts.join(", ");
+}
+function fitHTML(t) {
+  var c = state.cancer;
+  if (!c) return "";
+  if (t.spec[c]) return '<span class="badge ok">' + c + ': ' + t.spec[c] + '</span>';
+  return '<span class="badge ldt">Aplica a todos los tumores sólidos</span>';
+}
+function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+function hay(t) {
+  if (t._h) return t._h;
+  t._h = norm([t.name, t.brand, t.tagline, t.sample, t.panelName, t.paras.join(" "), cancerShort(t),
+    t.doctor.map(function (f) { return f.text + " " + f.items.map(function (i) { return i.t + " " + i.sub.join(" "); }).join(" "); }).join(" ")].join(" ").replace(/<[^>]+>/g, ""));
+  return t._h;
+}
+function match(t) {
+  if (state.panel && t.panel !== state.panel) return false;
+  if (!fitsCancer(t, state.cancer)) return false;
+  if (state.sample && t.sample !== state.sample) return false;
+  if (state.brand && t.brand !== state.brand) return false;
+  var q = norm(state.q.trim());
+  return !q || q.split(/\s+/).every(function (w) { return hay(t).indexOf(w) > -1; });
+}
+
+function cardHTML(t) {
+  return '<button type="button" class="card" data-open="' + ALL.indexOf(t) + '">' +
+    '<span class="brand">' + t.brand + '</span>' +
+    '<h3>' + t.name + '</h3>' +
+    '<span class="tag">' + t.tagline + '</span>' +
+    fitHTML(t) +
+    (t.reg ? '<span class="badge ' + t.regk + '">' + t.reg + '</span>' : '') +
+    '<dl class="facts"><dt>Genes</dt><dd>' + t.genes + '</dd><dt>Entrega</dt><dd>' + t.tat + '</dd></dl>' +
+    '<span class="foot"><span class="more">Ver ficha</span></span></button>';
+}
+function renderCards(el) {
+  var out = "";
+  PANELS.forEach(function (p) {
+    var inner = "";
+    p.samples.forEach(function (s) {
+      var ts = s.tests.filter(match).slice().sort(function (a, b) { return (state.cancer && b.spec[state.cancer] ? 1 : 0) - (state.cancer && a.spec[state.cancer] ? 1 : 0); });
+      if (ts.length) inner += '<div class="sample-title">Muestra: ' + s.name + '</div><div class="grid">' + ts.map(cardHTML).join("") + '</div>';
+    });
+    if (inner) out += '<section class="panel"><div class="panel-head"><span class="n">Panel ' + p.n + '</span><h2>' + p.name + '</h2><p>' + p.desc + '</p></div>' + inner + '</section>';
+  });
+  el.innerHTML = out;
+}
+function renderTable(el) {
+  var rows = ALL.filter(match).map(function (t) {
+    return '<tr><td><button type="button" class="link" data-open="' + ALL.indexOf(t) + '">' + t.name + '</button></td><td>' + t.panelName + '</td><td>' + t.muestra + '</td><td>' + t.genes + '</td><td>' + cancerShort(t) + '</td><td>' + t.tat + '</td></tr>';
+  }).join("");
+  el.innerHTML = rows ? '<div class="table-wrap"><table><thead><tr><th>Prueba</th><th>Tipo de panel</th><th>Muestra</th><th>Genes</th><th>Tipos de cáncer</th><th>Entrega</th></tr></thead><tbody>' + rows + '</tbody></table></div>' : '';
+}
+function render() {
+  var el = $("list");
+  if (state.view === "cards") renderCards(el); else renderTable(el);
+  if (!ALL.filter(match).length) el.innerHTML = '<div class="empty">Ninguna prueba coincide con estos filtros.<br><button type="button" class="chip" id="reset">Quitar filtros</button></div>';
+  document.querySelectorAll("#chips .chip").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.p === state.panel)); });
+  document.querySelectorAll("#cancers .chip").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.c === state.cancer)); });
+  var n = ALL.filter(match).length;
+  $("result").textContent = n + (n === 1 ? " prueba" : " pruebas") + (state.cancer ? " para " + state.cancer : " en el catálogo");
+  $("v-cards").setAttribute("aria-pressed", String(state.view === "cards"));
+  $("v-table").setAttribute("aria-pressed", String(state.view === "table"));
+}
+
+function sec(label, body, cls) { return '<div class="sec' + (cls ? " " + cls : "") + '"><div class="lab">' + label + '</div>' + body + '</div>'; }
+function listHTML(items) {
+  return '<ul>' + items.map(function (i) { return '<li>' + i.t + (i.sub.length ? '<ul>' + i.sub.map(function (s) { return '<li>' + s + '</li>'; }).join("") + '</ul>' : '') + '</li>'; }).join("") + '</ul>';
+}
+function bodyHTML(t) {
+  var h = "";
+  var stats = state.tab === "pat" ? [["Muestra", t.muestra], ["Entrega", t.tat]] : t.stats;
+  h += '<div class="stats">' + stats.map(function (s) { return '<div class="stat"><b>' + s[0] + '</b>' + s[1] + '</div>'; }).join("") + '</div>';
+  var chips = (t.broad ? ['<span class="tagchip">Todos los tumores sólidos</span>'] : []).concat(cancersOf(t).map(function (c) { return '<span class="tagchip spec">' + c + '</span>'; })).join("");
+  h += '<div class="sec"><div class="lab">Tipos de cáncer</div><div class="tagrow">' + chips + '</div></div>';
+  if (state.tab === "pat") {
+    h += '<p class="lead">' + t.headline + '</p>';
+    h += '<div class="sec">' + t.paras.map(function (p) { return '<p>' + p + '</p>'; }).join("") + '</div>';
+    h += sec("Qué significa para ti", '<ul>' + t.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join("") + '</ul>');
+    if (t.extra) h += '<div class="sec"><p>' + t.extra + '</p></div>';
+    if (t.note) h += '<p class="note">' + t.note + '</p>';
+  } else {
+    t.doctor.forEach(function (f) {
+      h += sec(f.label, (f.text ? '<p>' + f.text + '</p>' : '') + (f.items.length ? listHTML(f.items) : ''), f.label === "A considerar" ? "warn" : (f.label.indexOf("Complementos") === 0 ? "addons" : ""));
+    });
+  }
+  return h + askHTML(t);
+}
+function askMsg(t) { return "Hola, me gustaría conocer el precio y más detalles de la prueba " + plain(t.name) + "."; }
+var ASK = "Si requieres el precio o conocer algún detalle adicional de la prueba, da click aquí";
+function askHTML(t) {
+  var m = askMsg(t);
+  if (CONTACTO.whatsapp) return '<a class="ask" href="https://wa.me/' + CONTACTO.whatsapp + '?text=' + encodeURIComponent(m) + '">' + ASK + '</a>';
+  if (CONTACTO.correo) return '<a class="ask" href="mailto:' + CONTACTO.correo + '?subject=' + encodeURIComponent("Información de " + plain(t.name)) + '&body=' + encodeURIComponent(m) + '">' + ASK + '</a><p class="asknote">Correo: ' + CONTACTO.correo + '</p>';
+  return '<button type="button" class="ask" id="ask">' + ASK + '</button><div class="askmore" id="askmore" hidden><p>' + m + '</p><div class="row"><button type="button" class="chip" id="askcopy">Copiar mensaje</button><span class="pend">Canal de contacto por confirmar</span></div></div>';
+}
+function paint() {
+  var t = state.cur;
+  $("t-doc").setAttribute("aria-selected", String(state.tab === "doc"));
+  $("t-pat").setAttribute("aria-selected", String(state.tab === "pat"));
+  $("m-body").innerHTML = bodyHTML(t);
+  $("m-body").scrollTop = 0;
+  var ask = $("ask");
+  if (ask) ask.addEventListener("click", function () { $("askmore").hidden = false; });
+  var cp = $("askcopy");
+  if (cp) cp.addEventListener("click", function () {
+    try { navigator.clipboard.writeText(askMsg(state.cur)).then(function () { cp.textContent = "Mensaje copiado"; }, function () { cp.textContent = "Selecciona y copia el texto"; }); }
+    catch (e) { cp.textContent = "Selecciona y copia el texto"; }
+  });
+}
+function openTest(i) {
+  var t = ALL[i];
+  state.cur = t;
+  state.tab = "pat";
+  $("m-panel").textContent = t.panelName;
+  $("m-title").textContent = t.name;
+  $("m-sub").textContent = t.brand + " — " + t.muestra;
+  paint();
+  $("dlg").showModal();
+}
+
+$("counts").innerHTML = ['<span>' + ALL.length + ' pruebas</span>', '<span>' + PANELS.length + ' tipos de panel</span>', '<span>' + uniq(ALL.map(function (t) { return t.brand; })).length + ' marcas</span>'].join("");
+
+var ALLC = SOLID.concat(["Hematológicos"]);
+$("cancers").innerHTML = '<button type="button" class="chip" data-c="">Todos</button>' + ALLC.map(function (c) { return '<button type="button" class="chip" data-c="' + c + '">' + c + '</button>'; }).join("");
+$("cancers").addEventListener("click", function (e) { var b = e.target.closest(".chip"); if (b) { state.cancer = b.dataset.c; render(); } });
+$("chips").innerHTML = '<button type="button" class="chip" data-p="0">Todos los paneles</button>' + PANELS.map(function (p) { return '<button type="button" class="chip" data-p="' + p.n + '">' + p.name + '</button>'; }).join("");
+$("sample").innerHTML = '<option value="">Todas las muestras</option>' + uniq(ALL.map(function (t) { return t.sample; })).map(function (s) { return '<option>' + s + '</option>'; }).join("");
+$("brand").innerHTML = '<option value="">Todas las marcas</option>' + uniq(ALL.map(function (t) { return t.brand; })).map(function (s) { return '<option>' + s + '</option>'; }).join("");
+
+$("q").addEventListener("input", function (e) { state.q = e.target.value; render(); });
+$("sample").addEventListener("change", function (e) { state.sample = e.target.value; render(); });
+$("brand").addEventListener("change", function (e) { state.brand = e.target.value; render(); });
+$("chips").addEventListener("click", function (e) { var b = e.target.closest(".chip"); if (b) { state.panel = +b.dataset.p; render(); } });
+$("v-cards").addEventListener("click", function () { state.view = "cards"; render(); });
+$("v-table").addEventListener("click", function () { state.view = "table"; render(); });
+$("list").addEventListener("click", function (e) {
+  if (e.target.id === "reset") {
+    state.q = ""; state.panel = 0; state.cancer = ""; state.sample = ""; state.brand = "";
+    $("q").value = ""; $("sample").value = ""; $("brand").value = "";
+    render(); return;
+  }
+  var b = e.target.closest("[data-open]");
+  if (b) openTest(+b.dataset.open);
+});
+$("t-doc").addEventListener("click", function () { state.tab = "doc"; paint(); });
+$("t-pat").addEventListener("click", function () { state.tab = "pat"; paint(); });
+$("m-close").addEventListener("click", function () { $("dlg").close(); });
+$("dlg").addEventListener("click", function (e) { if (e.target === $("dlg")) $("dlg").close(); });
+render();
+</script>
+</body>
+</html>
