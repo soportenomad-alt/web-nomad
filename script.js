@@ -1122,7 +1122,7 @@
      Mel – Asistente Virtual Clínica de Nomad Genetics
      ========================================================================== */
   function initMelChatbot() {
-    const GROQ_API_KEY = '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';
+    const GROQ_API_KEY = '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';
     const GROQ_MODEL   = 'openai/gpt-oss-120b';
 
     /* ── DOM ─────────────────────────────────────────────────────────────── */
